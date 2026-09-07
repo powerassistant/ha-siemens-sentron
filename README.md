@@ -254,7 +254,6 @@ for an additional device or firmware variant.
 - [VersiCharge monitoring and PV control](docs/VERSICHARGE.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Entity model](docs/ENTITY_MODEL.md)
-- [Contributing](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 - [Changelog](CHANGELOG.md)
 
