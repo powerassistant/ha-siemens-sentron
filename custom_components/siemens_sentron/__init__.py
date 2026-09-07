@@ -12,6 +12,8 @@ from .coordinator import SentronCoordinator
 from .entity_ids import CONFIG_ENTRY_MINOR_VERSION, ENTITY_ID_MIGRATION_PENDING
 from homeassistant.helpers import config_validation as cv
 
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
+
 PLATFORMS: list[Platform] = [
     Platform.SENSOR,
     Platform.BINARY_SENSOR,
