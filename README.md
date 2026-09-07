@@ -247,6 +247,20 @@ sharing logs. Use the [bug report form](https://github.com/powerassistant/ha-sie
 for reproducible problems or the [device-support form](https://github.com/powerassistant/ha-siemens-sentron/issues/new?template=device_support.yml)
 for an additional device or firmware variant.
 
+### Missing icon in the HACS list
+
+The integration includes `brand/icon.png` and `brand/logo.png`, which Home
+Assistant supports locally from version 2026.3. Both files are included in the
+release ZIP. HACS 2.0.5 still loads its list icons from the older central brand
+service. Integrations with existing entries there can display an icon while
+newer integrations with local images show a placeholder.
+
+Support for these local images in the HACS list is tracked in
+[HACS #5388](https://github.com/hacs/integration/pull/5388). Updating this
+integration alone cannot change that HACS behavior. See the
+[Home Assistant brand image documentation](https://developers.home-assistant.io/blog/2026/02/24/brands-proxy-api/)
+for how the bundled images are used in Home Assistant itself after installation.
+
 ## Documentation and support
 
 The download badge totals downloads of `siemens_sentron.zip` across published

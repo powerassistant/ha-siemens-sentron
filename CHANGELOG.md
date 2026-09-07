@@ -12,6 +12,8 @@ All notable changes to this project are documented here.
 - Prepare release drafts with a validated ZIP through GitHub Actions before
   publication, and check that the tag matches the integration version.
 - Remove the fixed release selection from the HACS installation instructions.
+- Verify that the release ZIP includes both brand images and document the
+  remaining HACS list-icon limitation.
 
 ## [V26.09.09] - 2026-09-07
 
