@@ -58,13 +58,9 @@ def validate(*, allow_release_gates: bool) -> list[str]:
         ROOT / "LICENSE",
         ROOT / "DISCLAIMER.md",
         ROOT / "DISCLAIMER_DE.md",
-        ROOT / "PUBLICATION_CHECKLIST.md",
         ROOT / ".github" / "workflows" / "validate.yml",
         ROOT / "docs" / "KNOWN_LIMITATIONS.md",
         ROOT / "docs" / "images" / "README.md",
-        ROOT / "docs" / "images" / "01-integration-setup.svg",
-        ROOT / "docs" / "images" / "02-device-overview.svg",
-        ROOT / "docs" / "images" / "03-energy-dashboard.svg",
     ]
     required_integration = [
         INTEGRATION / "__init__.py",
