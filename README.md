@@ -65,8 +65,6 @@ The integration creates only the capabilities defined for the detected profile.
 ### Supported Powercenter child devices
 
 - 5ST3 COM AS+FC
-- 3NA3 COM Fuse
-- 3NA6 COM Fuse
 - 5SL6 COM MCB
 - 5SL6 COM MCB RCM
 - 5SV6 COM AFDD
@@ -195,19 +193,6 @@ not promise or emulate automatic 1/3-phase switching. See the
 [VersiCharge guide](docs/VERSICHARGE.md) for the calculation, a Home Assistant
 automation example, firmware differences and operational limits.
 
-## Screenshots
-
-The repository includes three replaceable placeholders so the public layout is
-ready without presenting simulated values as real measurements.
-
-| Setup | Device overview | Energy Dashboard |
-| --- | --- | --- |
-| ![Integration setup screenshot placeholder](docs/images/01-integration-setup.svg) | ![Device overview screenshot placeholder](docs/images/02-device-overview.svg) | ![Energy Dashboard screenshot placeholder](docs/images/03-energy-dashboard.svg) |
-
-See the [screenshot checklist](docs/images/README.md) before replacing them.
-Remove IP addresses, serial numbers, site names and customer-specific data from
-every capture.
-
 ## Updates and entity IDs
 
 - Create a Home Assistant backup before updating the integration.
@@ -262,16 +247,6 @@ Remove IP addresses, serial numbers and site-specific information before
 sharing logs. Use the [bug report form](https://github.com/powerassistant/ha-siemens-sentron/issues/new?template=bug_report.yml)
 for reproducible problems or the [device-support form](https://github.com/powerassistant/ha-siemens-sentron/issues/new?template=device_support.yml)
 for an additional device or firmware variant.
-
-## Documentation and support
-
-- [Known limitations](docs/KNOWN_LIMITATIONS.md)
-- [VersiCharge monitoring and PV control](docs/VERSICHARGE.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Entity model](docs/ENTITY_MODEL.md)
-- [Contributing](CONTRIBUTING.md)
-- [Security policy](SECURITY.md)
-- [Changelog](CHANGELOG.md)
 
 The maintainer publishes this as an individual, non-commercial community
 project. There is no paid service, support contract, response-time promise or
