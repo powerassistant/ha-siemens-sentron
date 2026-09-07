@@ -1,19 +1,13 @@
 {
-  "codeowners": [
-    "@powerassistant"
-  ],
+  "domain": "siemens_sentron",
+  "name": "Siemens SENTRON",
+  "codeowners": ["@powerassistant"],
   "config_flow": true,
   "documentation": "https://github.com/powerassistant/ha-siemens-sentron",
-  "domain": "siemens_sentron",
   "integration_type": "hub",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/powerassistant/ha-siemens-sentron/issues",
-  "loggers": [
-    "pymodbus"
-  ],
-  "name": "Siemens SENTRON",
-  "requirements": [
-    "pymodbus==3.13.1"
-  ],
+  "loggers": ["pymodbus"],
+  "requirements": ["pymodbus==3.13.1"],
   "version": "V26.09.08"
 }
