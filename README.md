@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="custom_components/siemens_sentron/brand/logo.png" alt="Siemens SENTRON" width="180">
+  <img src="https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/custom_components/siemens_sentron/brand/logo.png" alt="Siemens SENTRON" width="180">
 </p>
 
 # Siemens SENTRON for Home Assistant
