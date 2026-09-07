@@ -1,0 +1,67 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  repository:
+    name: Repository checks
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14.2"
+      - name: Validate repository
+        run: python3 scripts/validate_repository.py
+      - name: Run release-contract tests
+        run: python3 -m unittest discover -s tests -v
+
+  hacs:
+    name: HACS
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: HACS validation
+        uses: hacs/action@main
+        with:
+          category: integration
+
+  runtime-import:
+    name: Home Assistant runtime import
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14.2"
+      - name: Install target runtime
+        run: python3 -m pip install "homeassistant==2026.8.3" "pymodbus==3.13.1"
+      - name: Import integration modules
+        run: python3 scripts/import_runtime.py
+
+  hassfest:
+    name: Hassfest
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Hassfest validation
+        uses: home-assistant/actions/hassfest@master

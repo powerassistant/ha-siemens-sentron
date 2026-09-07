@@ -1,0 +1,51 @@
+name: New device or firmware support
+description: Request support for another SENTRON device or firmware variant
+title: "[Device]: "
+labels:
+  - enhancement
+  - device-support
+body:
+  - type: checkboxes
+    attributes:
+      label: Rights and safety
+      options:
+        - label: I will provide only information that I am allowed to publish.
+          required: true
+        - label: I removed serial numbers, IP/MAC addresses, site data and customer information.
+          required: true
+        - label: I understand that write functions require separate hardware safety testing.
+          required: true
+  - type: input
+    attributes:
+      label: Exact product designation
+      placeholder: e.g. SENTRON ...
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Firmware version
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Connection
+      options:
+        - Powercenter child device
+        - Standalone Modbus TCP device
+        - Other or unknown
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Requested measurements or controls
+      description: Explain the operational use case. Do not paste register tables from protected documents.
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Public documentation link
+      description: Optional public manufacturer page or document URL; do not upload restricted files.
+  - type: textarea
+    attributes:
+      label: Hardware test availability
+      description: State whether you can safely test read behavior, write behavior and negative paths on a non-critical installation.

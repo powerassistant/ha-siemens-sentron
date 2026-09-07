@@ -1,0 +1,256 @@
+{
+  "entity": {
+    "sensor": {
+      "actual_tariff": {
+        "default": "mdi:cash-multiple"
+      },
+      "alarm_manual_off_active": {
+        "default": "mdi:electric-switch"
+      },
+      "alarm_rcm_active": {
+        "default": "mdi:current-ac"
+      },
+      "alarm_state": {
+        "default": "mdi:alert"
+      },
+      "alarm_trip_active": {
+        "default": "mdi:alert-circle-outline"
+      },
+      "attached_device_type": {
+        "default": "mdi:devices"
+      },
+      "ble_signal_strength_rssi": {
+        "default": "mdi:signal"
+      },
+      "breaker_state": {
+        "default": "mdi:electric-switch"
+      },
+      "connection_state": {
+        "default": "mdi:lan-pending"
+      },
+      "counter_configurable": {
+        "default": "mdi:counter"
+      },
+      "device_diagnostics_status": {
+        "default": "mdi:chip"
+      },
+      "device_test_status": {
+        "default": "mdi:clipboard-check-outline"
+      },
+      "dido_input_1": {
+        "default": "mdi:electric-switch"
+      },
+      "dido_input_2": {
+        "default": "mdi:electric-switch"
+      },
+      "discovered_devices": {
+        "default": "mdi:devices"
+      },
+      "energy_apparent_tariff_1_collective": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_1_l1": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_1_l2": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_1_l3": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_2_collective": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_2_l1": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_2_l2": {
+        "default": "mdi:meter-electric"
+      },
+      "energy_apparent_tariff_2_l3": {
+        "default": "mdi:meter-electric"
+      },
+      "firmware": {
+        "default": "mdi:chip"
+      },
+      "frequency": {
+        "default": "mdi:sine-wave"
+      },
+      "last_state_rcd_test": {
+        "default": "mdi:clipboard-check-outline"
+      },
+      "leakage": {
+        "default": "mdi:current-ac"
+      },
+      "manufacturer_id": {
+        "default": "mdi:factory"
+      },
+      "online_status": {
+        "default": "mdi:lan-connect"
+      },
+      "operating_hours_overall": {
+        "default": "mdi:timer-outline"
+      },
+      "order_id": {
+        "default": "mdi:barcode"
+      },
+      "output_1_forcing": {
+        "default": "mdi:source-branch"
+      },
+      "output_2_forcing": {
+        "default": "mdi:source-branch"
+      },
+      "power_factor": {
+        "default": "mdi:angle-acute"
+      },
+      "powercenter_write_cooldown": {
+        "default": "mdi:timer-sand"
+      },
+      "radio_channel": {
+        "default": "mdi:radio-tower"
+      },
+      "radio_signal_strength_rssi": {
+        "default": "mdi:signal"
+      },
+      "rca_handle_state": {
+        "default": "mdi:electric-switch"
+      },
+      "rcm_ac_basic_frequency": {
+        "default": "mdi:current-ac"
+      },
+      "rcm_ac_low_pass": {
+        "default": "mdi:current-ac"
+      },
+      "rcm_rms_low_pass": {
+        "default": "mdi:current-ac"
+      },
+      "rcm_test_status": {
+        "default": "mdi:clipboard-check-outline"
+      },
+      "reactive_power": {
+        "default": "mdi:flash-outline"
+      },
+      "unit_id": {
+        "default": "mdi:identifier"
+      },
+      "standby_cooldown": {
+        "default": "mdi:timer-sand"
+      },
+      "state_binary_inputs": {
+        "default": "mdi:electric-switch"
+      },
+      "state_binary_outputs": {
+        "default": "mdi:electric-switch"
+      },
+      "test_status_rcm": {
+        "default": "mdi:clipboard-pulse-outline"
+      },
+      "test_status_self_rcd": {
+        "default": "mdi:clipboard-pulse-outline"
+      },
+      "unlock_acknowledge": {
+        "default": "mdi:timer-sand"
+      },
+      "unlock_status": {
+        "default": "mdi:lock-outline"
+      },
+      "variant": {
+        "default": "mdi:identifier"
+      }
+    },
+    "switch": {
+      "locate_device": {
+        "default": "mdi:led-outline"
+      },
+      "output_force_1": {
+        "default": "mdi:electric-switch"
+      },
+      "output_force_2": {
+        "default": "mdi:electric-switch"
+      },
+      "versicharge_charging_enabled": {
+        "default": "mdi:ev-station"
+      }
+    },
+    "select": {
+      "ard_auto_reclose": {
+        "default": "mdi:autorenew"
+      },
+      "attached_device_type": {
+        "default": "mdi:devices"
+      },
+      "ecpd_instantaneous_trip_behaviour": {
+        "default": "mdi:shield-alert-outline"
+      },
+      "ecpd_nominal_current": {
+        "default": "mdi:current-ac"
+      },
+      "ecpd_rcd_sensitivity": {
+        "default": "mdi:tune-vertical"
+      },
+      "ecpd_rcd_tripping_time": {
+        "default": "mdi:timer-cog-outline"
+      },
+      "ecpd_residual_current_trip_behaviour": {
+        "default": "mdi:shield-alert-outline"
+      },
+      "ecpd_time_delay_release_behaviour": {
+        "default": "mdi:shield-alert-outline"
+      },
+      "remote_control_communication": {
+        "default": "mdi:remote"
+      }
+    },
+    "button": {
+      "reset_manual_off": {
+        "default": "mdi:restore"
+      },
+      "start_rcm_test": {
+        "default": "mdi:clipboard-pulse-outline"
+      },
+      "start_self_rcd_test": {
+        "default": "mdi:clipboard-pulse-outline"
+      },
+      "unpair_device": {
+        "default": "mdi:electric-switch"
+      }
+    },
+    "number": {
+      "rcm_ac_alarm_threshold": {
+        "default": "mdi:current-ac"
+      },
+      "rcm_ac_pre_alarm_threshold": {
+        "default": "mdi:gauge"
+      },
+      "rcm_rms_alarm_threshold": {
+        "default": "mdi:current-ac"
+      },
+      "rcm_rms_pre_alarm_threshold": {
+        "default": "mdi:gauge"
+      },
+      "versicharge_charging_current": {
+        "default": "mdi:current-ac"
+      },
+      "versicharge_charging_power": {
+        "default": "mdi:ev-station"
+      },
+      "versicharge_fallback_current": {
+        "default": "mdi:shield-alert-outline"
+      },
+      "versicharge_fallback_time": {
+        "default": "mdi:timer-alert-outline"
+      }
+    },
+    "binary_sensor": {
+      "versicharge_vehicle_connected": {
+        "default": "mdi:car-connected"
+      },
+      "versicharge_charging": {
+        "default": "mdi:ev-station"
+      },
+      "versicharge_problem": {
+        "default": "mdi:alert-circle-outline"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Device overview screenshot placeholder</title>
+  <desc id="desc">Placeholder to be replaced by an approved Home Assistant device overview capture.</desc>
+  <rect width="1200" height="675" fill="#f4f5f7"/>
+  <rect x="70" y="55" width="1060" height="565" rx="24" fill="#ffffff" stroke="#9aa0b2" stroke-width="4"/>
+  <rect x="70" y="55" width="1060" height="82" rx="24" fill="#41bdf5"/>
+  <rect x="70" y="113" width="1060" height="24" fill="#41bdf5"/>
+  <text x="115" y="108" fill="#082f49" font-family="Arial, sans-serif" font-size="34" font-weight="700">Powercenter and child devices</text>
+  <rect x="130" y="190" width="270" height="310" rx="18" fill="#f8fafc" stroke="#c7cbd6" stroke-width="3"/>
+  <rect x="465" y="190" width="270" height="145" rx="18" fill="#f8fafc" stroke="#c7cbd6" stroke-width="3"/>
+  <rect x="800" y="190" width="270" height="145" rx="18" fill="#f8fafc" stroke="#c7cbd6" stroke-width="3"/>
+  <rect x="465" y="355" width="270" height="145" rx="18" fill="#f8fafc" stroke="#c7cbd6" stroke-width="3"/>
+  <rect x="800" y="355" width="270" height="145" rx="18" fill="#f8fafc" stroke="#c7cbd6" stroke-width="3"/>
+  <text x="600" y="555" text-anchor="middle" fill="#34384b" font-family="Arial, sans-serif" font-size="38" font-weight="700">SCREENSHOT PLACEHOLDER</text>
+  <text x="600" y="593" text-anchor="middle" fill="#5c6275" font-family="Arial, sans-serif" font-size="22">Use a sanitized real device page</text>
+</svg>

@@ -1,0 +1,855 @@
+{
+  "title": "Siemens SENTRON",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect a Siemens SENTRON device",
+        "description": "Enter the IP address or host name and Modbus TCP settings of a Siemens SENTRON Powercenter, PAC2200 or VersiCharge. The integration identifies the connected root device. For Powercenter devices, supported downstream devices are also discovered.",
+        "data": {
+          "host": "IP address or host name",
+          "modbus_unit_id": "Modbus unit ID",
+          "port": "Modbus TCP port"
+        },
+        "data_description": {
+          "modbus_unit_id": "Used only for VersiCharge. Default: 2; fallback: 1."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the device. Check its address, Modbus TCP settings and network access.",
+      "unsupported_device": "The connected Modbus device is not a supported Siemens SENTRON Powercenter, PAC2200 or VersiCharge."
+    },
+    "abort": {
+      "already_configured": "This IP address or host name and port are already configured."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "active_power": {
+        "name": "Power Active"
+      },
+      "actual_tariff": {
+        "name": "Actual tariff"
+      },
+      "alarm_manual_off_active": {
+        "name": "Manual-off alarm active"
+      },
+      "alarm_rcm_active": {
+        "name": "RCM alarm active"
+      },
+      "alarm_state": {
+        "name": "Alarm state"
+      },
+      "alarm_trip_active": {
+        "name": "Trip active"
+      },
+      "apparent_power": {
+        "name": "Power Apparent"
+      },
+      "attached_device_type": {
+        "name": "Attached device type"
+      },
+      "average_temperature": {
+        "name": "Temperature Average"
+      },
+      "ble_signal_strength_rssi": {
+        "name": "BLE signal strength"
+      },
+      "breaker_state": {
+        "name": "Breaker state"
+      },
+      "connection_state": {
+        "name": "Connection state"
+      },
+      "counter_configurable": {
+        "name": "Counter Configurable"
+      },
+      "current": {
+        "name": "Current"
+      },
+      "current_average": {
+        "name": "Current"
+      },
+      "current_l1": {
+        "name": "Current L1"
+      },
+      "current_l2": {
+        "name": "Current L2"
+      },
+      "current_l3": {
+        "name": "Current L3"
+      },
+      "current_neutral": {
+        "name": "Current N"
+      },
+      "date_time": {
+        "name": "Device time"
+      },
+      "device_diagnostics_status": {
+        "name": "Device diagnostics and status"
+      },
+      "device_test_status": {
+        "name": "Device test status"
+      },
+      "device_test_timestamp": {
+        "name": "Self-RCD test timestamp"
+      },
+      "dido_input_1": {
+        "name": "Digital input 1"
+      },
+      "dido_input_2": {
+        "name": "Digital input 2"
+      },
+      "discovered_devices": {
+        "name": "Discovered devices"
+      },
+      "energy_active_export_tariff_1_collective": {
+        "name": "Energy Active Export Tariff 1"
+      },
+      "energy_active_export_tariff_1_l1": {
+        "name": "Energy Active Export Tariff 1 L1"
+      },
+      "energy_active_export_tariff_1_l2": {
+        "name": "Energy Active Export Tariff 1 L2"
+      },
+      "energy_active_export_tariff_1_l3": {
+        "name": "Energy Active Export Tariff 1 L3"
+      },
+      "energy_active_export_tariff_2_collective": {
+        "name": "Energy Active Export Tariff 2"
+      },
+      "energy_active_export_tariff_2_l1": {
+        "name": "Energy Active Export Tariff 2 L1"
+      },
+      "energy_active_export_tariff_2_l2": {
+        "name": "Energy Active Export Tariff 2 L2"
+      },
+      "energy_active_export_tariff_2_l3": {
+        "name": "Energy Active Export Tariff 2 L3"
+      },
+      "energy_active_import_tariff_1_collective": {
+        "name": "Energy Active Import Tariff 1"
+      },
+      "energy_active_import_tariff_1_l1": {
+        "name": "Energy Active Import Tariff 1 L1"
+      },
+      "energy_active_import_tariff_1_l2": {
+        "name": "Energy Active Import Tariff 1 L2"
+      },
+      "energy_active_import_tariff_1_l3": {
+        "name": "Energy Active Import Tariff 1 L3"
+      },
+      "energy_active_import_tariff_2_collective": {
+        "name": "Energy Active Import Tariff 2"
+      },
+      "energy_active_import_tariff_2_l1": {
+        "name": "Energy Active Import Tariff 2 L1"
+      },
+      "energy_active_import_tariff_2_l2": {
+        "name": "Energy Active Import Tariff 2 L2"
+      },
+      "energy_active_import_tariff_2_l3": {
+        "name": "Energy Active Import Tariff 2 L3"
+      },
+      "energy_apparent_tariff_1_collective": {
+        "name": "Energy Apparent Tariff 1"
+      },
+      "energy_apparent_tariff_1_l1": {
+        "name": "Energy Apparent Tariff 1 L1"
+      },
+      "energy_apparent_tariff_1_l2": {
+        "name": "Energy Apparent Tariff 1 L2"
+      },
+      "energy_apparent_tariff_1_l3": {
+        "name": "Energy Apparent Tariff 1 L3"
+      },
+      "energy_apparent_tariff_2_collective": {
+        "name": "Energy Apparent Tariff 2"
+      },
+      "energy_apparent_tariff_2_l1": {
+        "name": "Energy Apparent Tariff 2 L1"
+      },
+      "energy_apparent_tariff_2_l2": {
+        "name": "Energy Apparent Tariff 2 L2"
+      },
+      "energy_apparent_tariff_2_l3": {
+        "name": "Energy Apparent Tariff 2 L3"
+      },
+      "energy_export": {
+        "name": "Energy Active Export"
+      },
+      "energy_import": {
+        "name": "Energy Active Import"
+      },
+      "energy_reactive_export_tariff_1_collective": {
+        "name": "Energy Reactive Export Tariff 1"
+      },
+      "energy_reactive_export_tariff_1_l1": {
+        "name": "Energy Reactive Export Tariff 1 L1"
+      },
+      "energy_reactive_export_tariff_1_l2": {
+        "name": "Energy Reactive Export Tariff 1 L2"
+      },
+      "energy_reactive_export_tariff_1_l3": {
+        "name": "Energy Reactive Export Tariff 1 L3"
+      },
+      "energy_reactive_export_tariff_2_collective": {
+        "name": "Energy Reactive Export Tariff 2"
+      },
+      "energy_reactive_export_tariff_2_l1": {
+        "name": "Energy Reactive Export Tariff 2 L1"
+      },
+      "energy_reactive_export_tariff_2_l2": {
+        "name": "Energy Reactive Export Tariff 2 L2"
+      },
+      "energy_reactive_export_tariff_2_l3": {
+        "name": "Energy Reactive Export Tariff 2 L3"
+      },
+      "energy_reactive_import_tariff_1_collective": {
+        "name": "Energy Reactive Import Tariff 1"
+      },
+      "energy_reactive_import_tariff_1_l1": {
+        "name": "Energy Reactive Import Tariff 1 L1"
+      },
+      "energy_reactive_import_tariff_1_l2": {
+        "name": "Energy Reactive Import Tariff 1 L2"
+      },
+      "energy_reactive_import_tariff_1_l3": {
+        "name": "Energy Reactive Import Tariff 1 L3"
+      },
+      "energy_reactive_import_tariff_2_collective": {
+        "name": "Energy Reactive Import Tariff 2"
+      },
+      "energy_reactive_import_tariff_2_l1": {
+        "name": "Energy Reactive Import Tariff 2 L1"
+      },
+      "energy_reactive_import_tariff_2_l2": {
+        "name": "Energy Reactive Import Tariff 2 L2"
+      },
+      "energy_reactive_import_tariff_2_l3": {
+        "name": "Energy Reactive Import Tariff 2 L3"
+      },
+      "firmware": {
+        "name": "Firmware version"
+      },
+      "frequency": {
+        "name": "Frequency"
+      },
+      "last_state_rcd_test": {
+        "name": "Last RCD test result"
+      },
+      "leakage": {
+        "name": "RCM RMS Low Pass Channel 1"
+      },
+      "manufacturer_id": {
+        "name": "Manufacturer ID"
+      },
+      "online_status": {
+        "name": "Online status"
+      },
+      "operating_hours_overall": {
+        "name": "Operating hours"
+      },
+      "order_id": {
+        "name": "Article number"
+      },
+      "output_1_forcing": {
+        "name": "Output 1 forcing source"
+      },
+      "output_2_forcing": {
+        "name": "Output 2 forcing source"
+      },
+      "power_active_collective": {
+        "name": "Power Active"
+      },
+      "power_active_l1": {
+        "name": "Power Active L1"
+      },
+      "power_active_l2": {
+        "name": "Power Active L2"
+      },
+      "power_active_l3": {
+        "name": "Power Active L3"
+      },
+      "power_active_max_actual_period": {
+        "name": "Power Active Max Actual Period"
+      },
+      "power_active_min_actual_period": {
+        "name": "Power Active Min Actual Period"
+      },
+      "power_apparent_collective": {
+        "name": "Power Apparent"
+      },
+      "power_apparent_l1": {
+        "name": "Power Apparent L1"
+      },
+      "power_apparent_l2": {
+        "name": "Power Apparent L2"
+      },
+      "power_apparent_l3": {
+        "name": "Power Apparent L3"
+      },
+      "power_factor": {
+        "name": "Power Factor"
+      },
+      "power_factor_collective": {
+        "name": "Power Factor"
+      },
+      "power_factor_l1": {
+        "name": "Power Factor L1"
+      },
+      "power_factor_l2": {
+        "name": "Power Factor L2"
+      },
+      "power_factor_l3": {
+        "name": "Power Factor L3"
+      },
+      "power_reactive_q1_collective": {
+        "name": "Power Reactive Q1"
+      },
+      "power_reactive_q1_l1": {
+        "name": "Power Reactive Q1 L1"
+      },
+      "power_reactive_q1_l2": {
+        "name": "Power Reactive Q1 L2"
+      },
+      "power_reactive_q1_l3": {
+        "name": "Power Reactive Q1 L3"
+      },
+      "power_reactive_q1_max_actual_period": {
+        "name": "Power Reactive Q1 Max Actual Period"
+      },
+      "power_reactive_q1_min_actual_period": {
+        "name": "Power Reactive Q1 Min Actual Period"
+      },
+      "powercenter_write_cooldown": {
+        "name": "Write cooldown"
+      },
+      "radio_channel": {
+        "name": "Radio channel"
+      },
+      "radio_signal_strength_rssi": {
+        "name": "Radio signal strength"
+      },
+      "rca_handle_state": {
+        "name": "Handle state"
+      },
+      "rcm_ac_basic_frequency": {
+        "name": "RCM AC Fundamental"
+      },
+      "rcm_ac_low_pass": {
+        "name": "RCM AC Low Pass"
+      },
+      "rcm_rms_low_pass": {
+        "name": "RCM RMS Low Pass"
+      },
+      "rcm_test_status": {
+        "name": "RCM test status"
+      },
+      "rcm_test_timestamp": {
+        "name": "RCM test timestamp"
+      },
+      "reactive_power": {
+        "name": "Power Reactive"
+      },
+      "unit_id": {
+        "name": "Modbus unit ID"
+      },
+      "standby_cooldown": {
+        "name": "Standby cooldown"
+      },
+      "state_binary_inputs": {
+        "name": "Digital input 1"
+      },
+      "state_binary_outputs": {
+        "name": "Digital output 1"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "test_status_rcm": {
+        "name": "RCM test status"
+      },
+      "test_status_self_rcd": {
+        "name": "Self-RCD test status"
+      },
+      "unlock_acknowledge": {
+        "name": "Unlock confirmation time remaining"
+      },
+      "unlock_status": {
+        "name": "Unlock status"
+      },
+      "variant": {
+        "name": "Device variant"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "voltage_average_ph_n": {
+        "name": "Voltage L-N"
+      },
+      "voltage_average_ph_ph": {
+        "name": "Voltage L-L"
+      },
+      "voltage_ph_n_l1": {
+        "name": "Voltage L1-N"
+      },
+      "voltage_ph_n_l2": {
+        "name": "Voltage L2-N"
+      },
+      "voltage_ph_n_l3": {
+        "name": "Voltage L3-N"
+      },
+      "voltage_ph_ph_l1_l2": {
+        "name": "Voltage L1-L2"
+      },
+      "voltage_ph_ph_l2_l3": {
+        "name": "Voltage L2-L3"
+      },
+      "voltage_ph_ph_l3_l1": {
+        "name": "Voltage L3-L1"
+      },
+      "versicharge_energy_total": {
+        "name": "Total charged energy"
+      },
+      "versicharge_active_power_total": {
+        "name": "Charging power"
+      },
+      "versicharge_evse_state": {
+        "name": "EVSE state",
+        "state": {
+          "not_connected": "No vehicle connected",
+          "connected": "Vehicle connected",
+          "charging": "Charging",
+          "recoverable_fault": "Recoverable fault",
+          "non_recoverable_fault": "Non-recoverable fault",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_ocpp_state": {
+        "name": "OCPP state",
+        "state": {
+          "available": "Available",
+          "preparing": "Preparing",
+          "charging": "Charging",
+          "suspended_ev": "Suspended by vehicle",
+          "suspended_evse": "Suspended by charging station",
+          "faulted": "Faulted",
+          "finishing": "Finishing",
+          "unavailable": "Unavailable",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_error": {
+        "name": "Error status",
+        "state": {
+          "adc_fault": "ADC fault",
+          "any_line_phase_over_voltage": "Any line phase overvoltage",
+          "any_line_phase_under_voltage": "Any line phase undervoltage",
+          "any_line_phase_zero_voltage": "Any line phase zero voltage",
+          "any_load_phase_over_voltage": "Any load phase overvoltage",
+          "any_load_phase_under_voltage": "Any load phase undervoltage",
+          "any_load_phase_zero_voltage": "Any load phase zero voltage",
+          "bad_amp_switch_position": "Invalid ampere switch position",
+          "bad_pilot_voltage": "Invalid pilot voltage",
+          "cable_max_temperature_fault": "Cable overtemperature fault",
+          "cable_temperature_ptca_fault": "Cable temperature sensor PTCA fault",
+          "cable_temperature_ptca_ptcb_fault": "Cable temperature sensors PTCA and PTCB fault",
+          "cable_temperature_ptcb_fault": "Cable temperature sensor PTCB fault",
+          "ccid_close_on_fault": "CCID close-on fault",
+          "ccid_fault": "CCID fault",
+          "ccid_self_test_fault": "CCID self-test fault",
+          "connector_lock_fault": "Connector lock fault",
+          "contactor_open": "Contactor open",
+          "diode_fault": "Diode fault",
+          "eeprom_read_write_fault": "EEPROM read/write fault",
+          "fram_read_write_fault": "FRAM read/write fault",
+          "ground_monitoring_fault": "Ground monitoring fault",
+          "j1772_communication_fault": "J1772 communication fault",
+          "line_phase_a_over_voltage": "Line phase A overvoltage",
+          "line_phase_a_under_voltage": "Line phase A undervoltage",
+          "line_phase_a_zero_voltage": "Line phase A zero voltage",
+          "line_phase_b_over_voltage": "Line phase B overvoltage",
+          "line_phase_b_under_voltage": "Line phase B undervoltage",
+          "line_phase_b_zero_voltage": "Line phase B zero voltage",
+          "line_phase_c_over_voltage": "Line phase C overvoltage",
+          "line_phase_c_under_voltage": "Line phase C undervoltage",
+          "line_phase_c_zero_voltage": "Line phase C zero voltage",
+          "load_phase_a_over_voltage": "Load phase A overvoltage",
+          "load_phase_a_under_voltage": "Load phase A undervoltage",
+          "load_phase_a_zero_voltage": "Load phase A zero voltage",
+          "load_phase_b_over_voltage": "Load phase B overvoltage",
+          "load_phase_b_under_voltage": "Load phase B undervoltage",
+          "load_phase_b_zero_voltage": "Load phase B zero voltage",
+          "load_phase_c_over_voltage": "Load phase C overvoltage",
+          "load_phase_c_under_voltage": "Load phase C undervoltage",
+          "load_phase_c_zero_voltage": "Load phase C zero voltage",
+          "metering_chip_read_write_fault": "Metering chip read/write fault",
+          "no_fault": "No fault",
+          "onboard_temperature_fault": "On-board temperature fault",
+          "onboard_temperature_ntca_fault": "On-board temperature sensor NTCA fault",
+          "onboard_temperature_ntca_ntcb_fault": "On-board temperature sensors NTCA and NTCB fault",
+          "onboard_temperature_ntcb_fault": "On-board temperature sensor NTCB fault",
+          "over_current_fault": "Overcurrent fault",
+          "over_temperature": "Overtemperature",
+          "reserved": "Reserved",
+          "sgd_communication_fault": "SGD communication fault",
+          "static_memory_fault": "Static memory fault",
+          "welded_contact_phase_a_fault": "Welded contact phase A fault",
+          "welded_contact_phase_b_fault": "Welded contact phase B fault",
+          "welded_contact_phase_c_fault": "Welded contact phase C fault",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_charging_current_limit": {
+        "name": "Charging current limit"
+      },
+      "versicharge_minimum_charging_power": {
+        "name": "Minimum charging power"
+      },
+      "versicharge_maximum_charging_power": {
+        "name": "Maximum charging power"
+      },
+      "versicharge_charger_phase": {
+        "name": "Charger phase mode",
+        "state": {
+          "single_phase": "Single-phase",
+          "three_phase": "Three-phase",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_effective_phase_count": {
+        "name": "Control phase count"
+      },
+      "versicharge_current_l1": {
+        "name": "Charging current L1"
+      },
+      "versicharge_current_l2": {
+        "name": "Charging current L2"
+      },
+      "versicharge_current_l3": {
+        "name": "Charging current L3"
+      },
+      "versicharge_current_phase_sum": {
+        "name": "Charging current phase sum"
+      },
+      "versicharge_voltage_l1_n": {
+        "name": "Voltage L1-N"
+      },
+      "versicharge_voltage_l2_n": {
+        "name": "Voltage L2-N"
+      },
+      "versicharge_voltage_l3_n": {
+        "name": "Voltage L3-N"
+      },
+      "versicharge_voltage_l1_l2": {
+        "name": "Voltage L1-L2"
+      },
+      "versicharge_voltage_l2_l3": {
+        "name": "Voltage L2-L3"
+      },
+      "versicharge_voltage_l3_l1": {
+        "name": "Voltage L3-L1"
+      },
+      "versicharge_active_power_l1": {
+        "name": "Active power L1"
+      },
+      "versicharge_active_power_l2": {
+        "name": "Active power L2"
+      },
+      "versicharge_active_power_l3": {
+        "name": "Active power L3"
+      },
+      "versicharge_active_power_total_reported": {
+        "name": "Charger-reported total active power"
+      },
+      "versicharge_apparent_power_l1": {
+        "name": "Apparent power L1"
+      },
+      "versicharge_apparent_power_l2": {
+        "name": "Apparent power L2"
+      },
+      "versicharge_apparent_power_l3": {
+        "name": "Apparent power L3"
+      },
+      "versicharge_apparent_power_total": {
+        "name": "Total apparent power"
+      },
+      "versicharge_reactive_power_l1": {
+        "name": "Reactive power L1"
+      },
+      "versicharge_reactive_power_l2": {
+        "name": "Reactive power L2"
+      },
+      "versicharge_reactive_power_l3": {
+        "name": "Reactive power L3"
+      },
+      "versicharge_reactive_power_total": {
+        "name": "Total reactive power"
+      },
+      "versicharge_power_factor_l1": {
+        "name": "Power factor L1"
+      },
+      "versicharge_power_factor_l2": {
+        "name": "Power factor L2"
+      },
+      "versicharge_power_factor_l3": {
+        "name": "Power factor L3"
+      },
+      "versicharge_power_factor_average": {
+        "name": "Average power factor"
+      },
+      "versicharge_temperature_onboard_a": {
+        "name": "On-board temperature A"
+      },
+      "versicharge_temperature_onboard_b": {
+        "name": "On-board temperature B"
+      },
+      "versicharge_temperature_offboard_a": {
+        "name": "Cable temperature A"
+      },
+      "versicharge_temperature_offboard_b": {
+        "name": "Cable temperature B"
+      },
+      "versicharge_fallback_current": {
+        "name": "Fallback current"
+      },
+      "versicharge_fallback_time": {
+        "name": "Fallback time"
+      },
+      "versicharge_session_energy_target_raw": {
+        "name": "Session energy target (raw)"
+      },
+      "versicharge_production_date": {
+        "name": "Production date"
+      },
+      "versicharge_platform_type": {
+        "name": "Platform type",
+        "state": {
+          "residential": "Residential",
+          "commercial": "Commercial",
+          "erk": "ERK",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_number_of_outlets": {
+        "name": "Number of outlets"
+      },
+      "versicharge_outlet_type": {
+        "name": "Outlet type",
+        "state": {
+          "left_type_2_socket": "Left Type 2 socket",
+          "left_type_2_cable_7m": "Left Type 2 cable (7 m)",
+          "left_type_2_shuttered_france": "Left shuttered Type 2 socket (France)",
+          "left_type_1_cable_7m": "Left Type 1 cable (7 m)",
+          "left_gbt_cable_6m": "Left GB/T cable (6 m)",
+          "front_j1772_20ft": "Front J1772 cable (20 ft)",
+          "front_j1772_25ft": "Front J1772 cable (25 ft)",
+          "right_type_2_socket": "Right Type 2 socket",
+          "right_type_2_cable_7m": "Right Type 2 cable (7 m)",
+          "right_shuttered_e_plug": "Right shuttered type E plug",
+          "right_type_1_cable_7m": "Right Type 1 cable (7 m)",
+          "right_shuttered_f_plug": "Right shuttered type F plug",
+          "right_shuttered_cover": "Right shuttered cover",
+          "reserved_13": "Reserved (13)",
+          "dual_type_2_sockets": "Dual Type 2 sockets",
+          "dual_type_2_cables_7m": "Dual Type 2 cables (7 m)",
+          "dual_type_2_france_7m": "Dual shuttered Type 2 sockets (France)",
+          "dual_type_1_cables_7m": "Dual Type 1 cables (7 m)",
+          "dual_gbt_cables_7m": "Dual GB/T cables (7 m)",
+          "ccs1_j1772_25ft": "CCS1/J1772 cable (25 ft)",
+          "reserved_20": "Reserved (20)",
+          "reserved_21": "Reserved (21)",
+          "blocked": "Blocked",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_delay_setting": {
+        "name": "Delay setting",
+        "state": {
+          "off": "Off",
+          "2_hours": "2 hours",
+          "4_hours": "4 hours",
+          "6_hours": "6 hours",
+          "8_hours": "8 hours",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_connectivity": {
+        "name": "Connectivity",
+        "state": {
+          "not_commissioned": "Not commissioned",
+          "wifi": "Wi-Fi",
+          "cellular": "Cellular",
+          "ethernet": "Ethernet",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_rated_current": {
+        "name": "Rated current"
+      },
+      "versicharge_installation_current": {
+        "name": "Installation current limit"
+      },
+      "versicharge_meter_type": {
+        "name": "Meter type",
+        "state": {
+          "none": "None",
+          "basic": "Basic",
+          "ansi": "ANSI",
+          "mid": "MID",
+          "integrated_mid": "Integrated MID",
+          "erk": "ERK",
+          "cmc": "CMC",
+          "onboard_cmc": "On-board CMC",
+          "blocked": "Blocked",
+          "unknown": "Unknown"
+        }
+      },
+      "versicharge_a8_firmware": {
+        "name": "A8 firmware"
+      },
+      "versicharge_m0_firmware": {
+        "name": "M0 firmware"
+      },
+      "versicharge_modbus_app_version": {
+        "name": "Modbus app version"
+      },
+      "versicharge_firmware_variant": {
+        "name": "Firmware variant"
+      },
+      "versicharge_firmware_release_date": {
+        "name": "Firmware release date"
+      },
+      "versicharge_register_profile": {
+        "name": "Register profile",
+        "state": {
+          "legacy": "Legacy",
+          "modern": "Modern",
+          "modern_assumed": "Modern (assumed)"
+        }
+      },
+      "versicharge_register_map": {
+        "name": "Register map"
+      },
+      "versicharge_modbus_unit_id": {
+        "name": "Modbus unit ID"
+      }
+    },
+    "switch": {
+      "locate_device": {
+        "name": "Identify"
+      },
+      "output_force_1": {
+        "name": "Force output 1"
+      },
+      "output_force_2": {
+        "name": "Force output 2"
+      },
+      "rca_handle": {
+        "name": "Handle"
+      },
+      "rcm_ac_alarm_enable": {
+        "name": "RCM AC alarm enable"
+      },
+      "rcm_ac_pre_alarm_enable": {
+        "name": "RCM AC pre-alarm enable"
+      },
+      "rcm_rms_alarm_enable": {
+        "name": "RCM RMS alarm enable"
+      },
+      "rcm_rms_pre_alarm_enable": {
+        "name": "RCM RMS pre-alarm enable"
+      },
+      "switch_standby": {
+        "name": "Electronic on/standby control"
+      },
+      "unlock": {
+        "name": "Unlock"
+      },
+      "versicharge_charging_enabled": {
+        "name": "Charging enabled"
+      }
+    },
+    "select": {
+      "ard_auto_reclose": {
+        "name": "ARD automatic reclose"
+      },
+      "attached_device_type": {
+        "name": "Attached device type"
+      },
+      "ecpd_instantaneous_trip_behaviour": {
+        "name": "Instantaneous trip behaviour"
+      },
+      "ecpd_nominal_current": {
+        "name": "Nominal current"
+      },
+      "ecpd_rcd_sensitivity": {
+        "name": "RCD sensitivity"
+      },
+      "ecpd_rcd_tripping_time": {
+        "name": "RCD tripping time"
+      },
+      "ecpd_residual_current_trip_behaviour": {
+        "name": "Residual-current trip behaviour"
+      },
+      "ecpd_time_delay_release_behaviour": {
+        "name": "Time-delay release behaviour"
+      },
+      "remote_control_communication": {
+        "name": "Remote control source"
+      }
+    },
+    "button": {
+      "reset_manual_off": {
+        "name": "Reset manual off"
+      },
+      "start_rcm_test": {
+        "name": "Start RCM test"
+      },
+      "start_self_rcd_test": {
+        "name": "Start Self-RCD test"
+      },
+      "unpair_device": {
+        "name": "Permanently disconnect device"
+      }
+    },
+    "number": {
+      "rcm_ac_alarm_threshold": {
+        "name": "RCM AC alarm threshold"
+      },
+      "rcm_ac_pre_alarm_threshold": {
+        "name": "RCM AC pre-alarm threshold"
+      },
+      "rcm_rms_alarm_threshold": {
+        "name": "RCM RMS alarm threshold"
+      },
+      "rcm_rms_pre_alarm_threshold": {
+        "name": "RCM RMS pre-alarm threshold"
+      },
+      "versicharge_charging_current": {
+        "name": "Charging current target"
+      },
+      "versicharge_charging_power": {
+        "name": "Charging power target"
+      },
+      "versicharge_fallback_current": {
+        "name": "Fallback current"
+      },
+      "versicharge_fallback_time": {
+        "name": "Fallback time"
+      }
+    },
+    "binary_sensor": {
+      "versicharge_vehicle_connected": {
+        "name": "Vehicle connected"
+      },
+      "versicharge_charging": {
+        "name": "Charging"
+      },
+      "versicharge_problem": {
+        "name": "Problem"
+      }
+    }
+  }
+}

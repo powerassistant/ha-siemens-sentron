@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Energy Dashboard screenshot placeholder</title>
+  <desc id="desc">Placeholder to be replaced by an approved Home Assistant Energy Dashboard capture.</desc>
+  <rect width="1200" height="675" fill="#f4f5f7"/>
+  <rect x="70" y="55" width="1060" height="565" rx="24" fill="#ffffff" stroke="#9aa0b2" stroke-width="4"/>
+  <rect x="70" y="55" width="1060" height="82" rx="24" fill="#41bdf5"/>
+  <rect x="70" y="113" width="1060" height="24" fill="#41bdf5"/>
+  <text x="115" y="108" fill="#082f49" font-family="Arial, sans-serif" font-size="34" font-weight="700">Home Assistant Energy Dashboard</text>
+  <line x1="170" y1="470" x2="1025" y2="470" stroke="#aeb4c2" stroke-width="3"/>
+  <line x1="170" y1="215" x2="170" y2="470" stroke="#aeb4c2" stroke-width="3"/>
+  <polyline points="170,430 295,405 420,420 545,330 670,355 795,245 920,285 1025,220" fill="none" stroke="#41bdf5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="600" y="555" text-anchor="middle" fill="#34384b" font-family="Arial, sans-serif" font-size="38" font-weight="700">SCREENSHOT PLACEHOLDER</text>
+  <text x="600" y="593" text-anchor="middle" fill="#5c6275" font-family="Arial, sans-serif" font-size="22">Replace with sanitized active-energy statistics</text>
+</svg>

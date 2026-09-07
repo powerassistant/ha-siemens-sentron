@@ -1,0 +1,46 @@
+name: Bug report
+description: Report reproducible integration behavior
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: checkboxes
+    attributes:
+      label: Safety and data handling
+      options:
+        - label: I removed IP addresses, serial numbers, customer data and confidential Siemens material.
+          required: true
+        - label: This is not a security vulnerability or urgent electrical-safety incident.
+          required: true
+  - type: input
+    attributes:
+      label: Integration version
+      placeholder: V26.08.21
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Home Assistant version
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Device and firmware
+      description: Product family and firmware only; omit serial numbers.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Actual behavior and reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Sanitized debug log
+      render: text
+

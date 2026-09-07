@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose an improvement for an already supported device
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: checkboxes
+    attributes:
+      label: Scope and data handling
+      options:
+        - label: This request concerns an already supported SENTRON device or repository feature.
+          required: true
+        - label: I will not upload confidential material, personal data, network addresses or third-party documents without publication rights.
+          required: true
+  - type: textarea
+    attributes:
+      label: Use case
+      description: Describe the problem and the user outcome, not only the proposed implementation.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Device and firmware
+      description: If relevant, provide product family and firmware only; omit serial numbers.
+  - type: textarea
+    attributes:
+      label: Alternatives considered

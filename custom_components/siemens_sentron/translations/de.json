@@ -1,0 +1,854 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Siemens-SENTRON-Gerät verbinden",
+        "description": "Gib die IP-Adresse oder den Hostnamen und die Modbus-TCP-Einstellungen eines Siemens SENTRON Powercenter, PAC2200 oder VersiCharge ein. Die Integration identifiziert das verbundene Hauptgerät. Bei Powercenter-Geräten werden zusätzlich unterstützte Untergeräte erkannt.",
+        "data": {
+          "host": "IP-Adresse oder Hostname",
+          "modbus_unit_id": "Modbus Unit-ID",
+          "port": "Modbus-TCP-Port"
+        },
+        "data_description": {
+          "modbus_unit_id": "Nur für VersiCharge; Standard: 2, Fallback: 1."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zum Gerät fehlgeschlagen. Prüfe Adresse, Modbus-TCP-Einstellungen und Netzwerkzugriff.",
+      "unsupported_device": "Das verbundene Modbus-Gerät ist kein unterstütztes Siemens SENTRON Powercenter, PAC2200 oder VersiCharge."
+    },
+    "abort": {
+      "already_configured": "Diese IP-Adresse bzw. dieser Hostname und Port sind bereits eingerichtet."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "active_power": {
+        "name": "Leistung Wirk"
+      },
+      "actual_tariff": {
+        "name": "Aktueller Tarif"
+      },
+      "alarm_manual_off_active": {
+        "name": "Alarm „Manuell Aus“ aktiv"
+      },
+      "alarm_rcm_active": {
+        "name": "RCM-Alarm aktiv"
+      },
+      "alarm_state": {
+        "name": "Alarmzustand"
+      },
+      "alarm_trip_active": {
+        "name": "Auslösung aktiv"
+      },
+      "apparent_power": {
+        "name": "Leistung Schein"
+      },
+      "attached_device_type": {
+        "name": "Angeschlossener Gerätetyp"
+      },
+      "average_temperature": {
+        "name": "Temperatur Durchschnitt"
+      },
+      "ble_signal_strength_rssi": {
+        "name": "BLE-Signalstärke"
+      },
+      "breaker_state": {
+        "name": "Schalterzustand"
+      },
+      "connection_state": {
+        "name": "Verbindungszustand"
+      },
+      "counter_configurable": {
+        "name": "Zähler Konfigurierbar"
+      },
+      "current": {
+        "name": "Strom"
+      },
+      "current_average": {
+        "name": "Strom"
+      },
+      "current_l1": {
+        "name": "Strom L1"
+      },
+      "current_l2": {
+        "name": "Strom L2"
+      },
+      "current_l3": {
+        "name": "Strom L3"
+      },
+      "current_neutral": {
+        "name": "Strom N"
+      },
+      "date_time": {
+        "name": "Gerätezeit"
+      },
+      "device_diagnostics_status": {
+        "name": "Gerätediagnose und -status"
+      },
+      "device_test_status": {
+        "name": "Geräteteststatus"
+      },
+      "device_test_timestamp": {
+        "name": "Self-RCD-Testzeitstempel"
+      },
+      "dido_input_1": {
+        "name": "Digitaleingang 1"
+      },
+      "dido_input_2": {
+        "name": "Digitaleingang 2"
+      },
+      "discovered_devices": {
+        "name": "Erkannte Geräte"
+      },
+      "energy_active_export_tariff_1_collective": {
+        "name": "Energie Export Tarif 1"
+      },
+      "energy_active_export_tariff_1_l1": {
+        "name": "Energie Export Tarif 1 L1"
+      },
+      "energy_active_export_tariff_1_l2": {
+        "name": "Energie Export Tarif 1 L2"
+      },
+      "energy_active_export_tariff_1_l3": {
+        "name": "Energie Export Tarif 1 L3"
+      },
+      "energy_active_export_tariff_2_collective": {
+        "name": "Energie Export Tarif 2"
+      },
+      "energy_active_export_tariff_2_l1": {
+        "name": "Energie Export Tarif 2 L1"
+      },
+      "energy_active_export_tariff_2_l2": {
+        "name": "Energie Export Tarif 2 L2"
+      },
+      "energy_active_export_tariff_2_l3": {
+        "name": "Energie Export Tarif 2 L3"
+      },
+      "energy_active_import_tariff_1_collective": {
+        "name": "Energie Import Tarif 1"
+      },
+      "energy_active_import_tariff_1_l1": {
+        "name": "Energie Import Tarif 1 L1"
+      },
+      "energy_active_import_tariff_1_l2": {
+        "name": "Energie Import Tarif 1 L2"
+      },
+      "energy_active_import_tariff_1_l3": {
+        "name": "Energie Import Tarif 1 L3"
+      },
+      "energy_active_import_tariff_2_collective": {
+        "name": "Energie Import Tarif 2"
+      },
+      "energy_active_import_tariff_2_l1": {
+        "name": "Energie Import Tarif 2 L1"
+      },
+      "energy_active_import_tariff_2_l2": {
+        "name": "Energie Import Tarif 2 L2"
+      },
+      "energy_active_import_tariff_2_l3": {
+        "name": "Energie Import Tarif 2 L3"
+      },
+      "energy_apparent_tariff_1_collective": {
+        "name": "Energie Schein Tarif 1"
+      },
+      "energy_apparent_tariff_1_l1": {
+        "name": "Energie Schein Tarif 1 L1"
+      },
+      "energy_apparent_tariff_1_l2": {
+        "name": "Energie Schein Tarif 1 L2"
+      },
+      "energy_apparent_tariff_1_l3": {
+        "name": "Energie Schein Tarif 1 L3"
+      },
+      "energy_apparent_tariff_2_collective": {
+        "name": "Energie Schein Tarif 2"
+      },
+      "energy_apparent_tariff_2_l1": {
+        "name": "Energie Schein Tarif 2 L1"
+      },
+      "energy_apparent_tariff_2_l2": {
+        "name": "Energie Schein Tarif 2 L2"
+      },
+      "energy_apparent_tariff_2_l3": {
+        "name": "Energie Schein Tarif 2 L3"
+      },
+      "energy_export": {
+        "name": "Energie Export"
+      },
+      "energy_import": {
+        "name": "Energie Import"
+      },
+      "energy_reactive_export_tariff_1_collective": {
+        "name": "Energie Blind Export Tarif 1"
+      },
+      "energy_reactive_export_tariff_1_l1": {
+        "name": "Energie Blind Export Tarif 1 L1"
+      },
+      "energy_reactive_export_tariff_1_l2": {
+        "name": "Energie Blind Export Tarif 1 L2"
+      },
+      "energy_reactive_export_tariff_1_l3": {
+        "name": "Energie Blind Export Tarif 1 L3"
+      },
+      "energy_reactive_export_tariff_2_collective": {
+        "name": "Energie Blind Export Tarif 2"
+      },
+      "energy_reactive_export_tariff_2_l1": {
+        "name": "Energie Blind Export Tarif 2 L1"
+      },
+      "energy_reactive_export_tariff_2_l2": {
+        "name": "Energie Blind Export Tarif 2 L2"
+      },
+      "energy_reactive_export_tariff_2_l3": {
+        "name": "Energie Blind Export Tarif 2 L3"
+      },
+      "energy_reactive_import_tariff_1_collective": {
+        "name": "Energie Blind Import Tarif 1"
+      },
+      "energy_reactive_import_tariff_1_l1": {
+        "name": "Energie Blind Import Tarif 1 L1"
+      },
+      "energy_reactive_import_tariff_1_l2": {
+        "name": "Energie Blind Import Tarif 1 L2"
+      },
+      "energy_reactive_import_tariff_1_l3": {
+        "name": "Energie Blind Import Tarif 1 L3"
+      },
+      "energy_reactive_import_tariff_2_collective": {
+        "name": "Energie Blind Import Tarif 2"
+      },
+      "energy_reactive_import_tariff_2_l1": {
+        "name": "Energie Blind Import Tarif 2 L1"
+      },
+      "energy_reactive_import_tariff_2_l2": {
+        "name": "Energie Blind Import Tarif 2 L2"
+      },
+      "energy_reactive_import_tariff_2_l3": {
+        "name": "Energie Blind Import Tarif 2 L3"
+      },
+      "firmware": {
+        "name": "Firmware-Version"
+      },
+      "frequency": {
+        "name": "Frequenz"
+      },
+      "last_state_rcd_test": {
+        "name": "Letztes RCD-Testergebnis"
+      },
+      "leakage": {
+        "name": "RCM RMS Tiefpass Kanal 1"
+      },
+      "manufacturer_id": {
+        "name": "Hersteller-ID"
+      },
+      "online_status": {
+        "name": "Online-Status"
+      },
+      "operating_hours_overall": {
+        "name": "Betriebsstunden"
+      },
+      "order_id": {
+        "name": "Artikelnummer"
+      },
+      "output_1_forcing": {
+        "name": "Forcing-Quelle Ausgang 1"
+      },
+      "output_2_forcing": {
+        "name": "Forcing-Quelle Ausgang 2"
+      },
+      "power_active_collective": {
+        "name": "Leistung Wirk"
+      },
+      "power_active_l1": {
+        "name": "Leistung Wirk L1"
+      },
+      "power_active_l2": {
+        "name": "Leistung Wirk L2"
+      },
+      "power_active_l3": {
+        "name": "Leistung Wirk L3"
+      },
+      "power_active_max_actual_period": {
+        "name": "Leistung Wirk Maximum Bedarfsperiode"
+      },
+      "power_active_min_actual_period": {
+        "name": "Leistung Wirk Minimum Bedarfsperiode"
+      },
+      "power_apparent_collective": {
+        "name": "Leistung Schein"
+      },
+      "power_apparent_l1": {
+        "name": "Leistung Schein L1"
+      },
+      "power_apparent_l2": {
+        "name": "Leistung Schein L2"
+      },
+      "power_apparent_l3": {
+        "name": "Leistung Schein L3"
+      },
+      "power_factor": {
+        "name": "Leistung Faktor"
+      },
+      "power_factor_collective": {
+        "name": "Leistung Faktor"
+      },
+      "power_factor_l1": {
+        "name": "Leistung Faktor L1"
+      },
+      "power_factor_l2": {
+        "name": "Leistung Faktor L2"
+      },
+      "power_factor_l3": {
+        "name": "Leistung Faktor L3"
+      },
+      "power_reactive_q1_collective": {
+        "name": "Leistung Blind Q1"
+      },
+      "power_reactive_q1_l1": {
+        "name": "Leistung Blind Q1 L1"
+      },
+      "power_reactive_q1_l2": {
+        "name": "Leistung Blind Q1 L2"
+      },
+      "power_reactive_q1_l3": {
+        "name": "Leistung Blind Q1 L3"
+      },
+      "power_reactive_q1_max_actual_period": {
+        "name": "Leistung Blind Q1 Maximum Bedarfsperiode"
+      },
+      "power_reactive_q1_min_actual_period": {
+        "name": "Leistung Blind Q1 Minimum Bedarfsperiode"
+      },
+      "powercenter_write_cooldown": {
+        "name": "Schreibsperrzeit"
+      },
+      "radio_channel": {
+        "name": "Funkkanal"
+      },
+      "radio_signal_strength_rssi": {
+        "name": "Funksignalstärke"
+      },
+      "rca_handle_state": {
+        "name": "Schaltergriffzustand"
+      },
+      "rcm_ac_basic_frequency": {
+        "name": "RCM AC Grundschwingung"
+      },
+      "rcm_ac_low_pass": {
+        "name": "RCM AC Tiefpass"
+      },
+      "rcm_rms_low_pass": {
+        "name": "RCM RMS Tiefpass"
+      },
+      "rcm_test_status": {
+        "name": "RCM-Teststatus"
+      },
+      "rcm_test_timestamp": {
+        "name": "RCM-Testzeitstempel"
+      },
+      "reactive_power": {
+        "name": "Leistung Blind"
+      },
+      "unit_id": {
+        "name": "Modbus Unit-ID"
+      },
+      "standby_cooldown": {
+        "name": "Standby-Sperrzeit"
+      },
+      "state_binary_inputs": {
+        "name": "Digitaleingang 1"
+      },
+      "state_binary_outputs": {
+        "name": "Digitalausgang 1"
+      },
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "test_status_rcm": {
+        "name": "RCM-Teststatus"
+      },
+      "test_status_self_rcd": {
+        "name": "Self-RCD-Teststatus"
+      },
+      "unlock_acknowledge": {
+        "name": "Verbleibende Entsperrbestätigung"
+      },
+      "unlock_status": {
+        "name": "Entsperrstatus"
+      },
+      "variant": {
+        "name": "Gerätevariante"
+      },
+      "voltage": {
+        "name": "Spannung"
+      },
+      "voltage_average_ph_n": {
+        "name": "Spannung L-N"
+      },
+      "voltage_average_ph_ph": {
+        "name": "Spannung L-L"
+      },
+      "voltage_ph_n_l1": {
+        "name": "Spannung L1-N"
+      },
+      "voltage_ph_n_l2": {
+        "name": "Spannung L2-N"
+      },
+      "voltage_ph_n_l3": {
+        "name": "Spannung L3-N"
+      },
+      "voltage_ph_ph_l1_l2": {
+        "name": "Spannung L1-L2"
+      },
+      "voltage_ph_ph_l2_l3": {
+        "name": "Spannung L2-L3"
+      },
+      "voltage_ph_ph_l3_l1": {
+        "name": "Spannung L3-L1"
+      },
+      "versicharge_energy_total": {
+        "name": "Geladene Energie gesamt"
+      },
+      "versicharge_active_power_total": {
+        "name": "Ladeleistung"
+      },
+      "versicharge_evse_state": {
+        "name": "EVSE-Zustand",
+        "state": {
+          "not_connected": "Kein Fahrzeug verbunden",
+          "connected": "Fahrzeug verbunden",
+          "charging": "Lädt",
+          "recoverable_fault": "Behebbarer Fehler",
+          "non_recoverable_fault": "Nicht behebbarer Fehler",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_ocpp_state": {
+        "name": "OCPP-Zustand",
+        "state": {
+          "available": "Verfügbar",
+          "preparing": "Vorbereitung",
+          "charging": "Lädt",
+          "suspended_ev": "Durch Fahrzeug pausiert",
+          "suspended_evse": "Durch Ladestation pausiert",
+          "faulted": "Störung",
+          "finishing": "Abschluss",
+          "unavailable": "Nicht verfügbar",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_error": {
+        "name": "Fehlerstatus",
+        "state": {
+          "adc_fault": "ADC-Fehler",
+          "any_line_phase_over_voltage": "Überspannung an mindestens einer Netzphase",
+          "any_line_phase_under_voltage": "Unterspannung an mindestens einer Netzphase",
+          "any_line_phase_zero_voltage": "Spannungsausfall an mindestens einer Netzphase",
+          "any_load_phase_over_voltage": "Überspannung an mindestens einer Lastphase",
+          "any_load_phase_under_voltage": "Unterspannung an mindestens einer Lastphase",
+          "any_load_phase_zero_voltage": "Spannungsausfall an mindestens einer Lastphase",
+          "bad_amp_switch_position": "Ungültige Stromschalterposition",
+          "bad_pilot_voltage": "Ungültige Pilotspannung",
+          "cable_max_temperature_fault": "Kabel-Übertemperaturfehler",
+          "cable_temperature_ptca_fault": "Fehler am Kabeltemperatursensor PTCA",
+          "cable_temperature_ptca_ptcb_fault": "Fehler an den Kabeltemperatursensoren PTCA und PTCB",
+          "cable_temperature_ptcb_fault": "Fehler am Kabeltemperatursensor PTCB",
+          "ccid_close_on_fault": "CCID-Einschaltfehler",
+          "ccid_fault": "CCID-Fehler",
+          "ccid_self_test_fault": "CCID-Selbsttestfehler",
+          "connector_lock_fault": "Steckerverriegelungsfehler",
+          "contactor_open": "Schütz geöffnet",
+          "diode_fault": "Diodenfehler",
+          "eeprom_read_write_fault": "EEPROM-Lese-/Schreibfehler",
+          "fram_read_write_fault": "FRAM-Lese-/Schreibfehler",
+          "ground_monitoring_fault": "Erdungsüberwachungsfehler",
+          "j1772_communication_fault": "J1772-Kommunikationsfehler",
+          "line_phase_a_over_voltage": "Überspannung Netzphase A",
+          "line_phase_a_under_voltage": "Unterspannung Netzphase A",
+          "line_phase_a_zero_voltage": "Spannungsausfall Netzphase A",
+          "line_phase_b_over_voltage": "Überspannung Netzphase B",
+          "line_phase_b_under_voltage": "Unterspannung Netzphase B",
+          "line_phase_b_zero_voltage": "Spannungsausfall Netzphase B",
+          "line_phase_c_over_voltage": "Überspannung Netzphase C",
+          "line_phase_c_under_voltage": "Unterspannung Netzphase C",
+          "line_phase_c_zero_voltage": "Spannungsausfall Netzphase C",
+          "load_phase_a_over_voltage": "Überspannung Lastphase A",
+          "load_phase_a_under_voltage": "Unterspannung Lastphase A",
+          "load_phase_a_zero_voltage": "Spannungsausfall Lastphase A",
+          "load_phase_b_over_voltage": "Überspannung Lastphase B",
+          "load_phase_b_under_voltage": "Unterspannung Lastphase B",
+          "load_phase_b_zero_voltage": "Spannungsausfall Lastphase B",
+          "load_phase_c_over_voltage": "Überspannung Lastphase C",
+          "load_phase_c_under_voltage": "Unterspannung Lastphase C",
+          "load_phase_c_zero_voltage": "Spannungsausfall Lastphase C",
+          "metering_chip_read_write_fault": "Messchip-Lese-/Schreibfehler",
+          "no_fault": "Kein Fehler",
+          "onboard_temperature_fault": "Interner Temperaturfehler",
+          "onboard_temperature_ntca_fault": "Fehler am internen Temperatursensor NTCA",
+          "onboard_temperature_ntca_ntcb_fault": "Fehler an den internen Temperatursensoren NTCA und NTCB",
+          "onboard_temperature_ntcb_fault": "Fehler am internen Temperatursensor NTCB",
+          "over_current_fault": "Überstromfehler",
+          "over_temperature": "Übertemperatur",
+          "reserved": "Reserviert",
+          "sgd_communication_fault": "SGD-Kommunikationsfehler",
+          "static_memory_fault": "Fehler im statischen Speicher",
+          "welded_contact_phase_a_fault": "Verschweißter Kontakt Phase A",
+          "welded_contact_phase_b_fault": "Verschweißter Kontakt Phase B",
+          "welded_contact_phase_c_fault": "Verschweißter Kontakt Phase C",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_charging_current_limit": {
+        "name": "Ladestromgrenze"
+      },
+      "versicharge_minimum_charging_power": {
+        "name": "Minimale Ladeleistung"
+      },
+      "versicharge_maximum_charging_power": {
+        "name": "Maximale Ladeleistung"
+      },
+      "versicharge_charger_phase": {
+        "name": "Phasenmodus der Ladestation",
+        "state": {
+          "single_phase": "Einphasig",
+          "three_phase": "Dreiphasig",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_effective_phase_count": {
+        "name": "Phasenanzahl der Regelung"
+      },
+      "versicharge_current_l1": {
+        "name": "Ladestrom L1"
+      },
+      "versicharge_current_l2": {
+        "name": "Ladestrom L2"
+      },
+      "versicharge_current_l3": {
+        "name": "Ladestrom L3"
+      },
+      "versicharge_current_phase_sum": {
+        "name": "Ladestrom Phasensumme"
+      },
+      "versicharge_voltage_l1_n": {
+        "name": "Spannung L1-N"
+      },
+      "versicharge_voltage_l2_n": {
+        "name": "Spannung L2-N"
+      },
+      "versicharge_voltage_l3_n": {
+        "name": "Spannung L3-N"
+      },
+      "versicharge_voltage_l1_l2": {
+        "name": "Spannung L1-L2"
+      },
+      "versicharge_voltage_l2_l3": {
+        "name": "Spannung L2-L3"
+      },
+      "versicharge_voltage_l3_l1": {
+        "name": "Spannung L3-L1"
+      },
+      "versicharge_active_power_l1": {
+        "name": "Wirkleistung L1"
+      },
+      "versicharge_active_power_l2": {
+        "name": "Wirkleistung L2"
+      },
+      "versicharge_active_power_l3": {
+        "name": "Wirkleistung L3"
+      },
+      "versicharge_active_power_total_reported": {
+        "name": "Von der Ladestation gemeldete Gesamtwirkleistung"
+      },
+      "versicharge_apparent_power_l1": {
+        "name": "Scheinleistung L1"
+      },
+      "versicharge_apparent_power_l2": {
+        "name": "Scheinleistung L2"
+      },
+      "versicharge_apparent_power_l3": {
+        "name": "Scheinleistung L3"
+      },
+      "versicharge_apparent_power_total": {
+        "name": "Scheinleistung gesamt"
+      },
+      "versicharge_reactive_power_l1": {
+        "name": "Blindleistung L1"
+      },
+      "versicharge_reactive_power_l2": {
+        "name": "Blindleistung L2"
+      },
+      "versicharge_reactive_power_l3": {
+        "name": "Blindleistung L3"
+      },
+      "versicharge_reactive_power_total": {
+        "name": "Blindleistung gesamt"
+      },
+      "versicharge_power_factor_l1": {
+        "name": "Leistungsfaktor L1"
+      },
+      "versicharge_power_factor_l2": {
+        "name": "Leistungsfaktor L2"
+      },
+      "versicharge_power_factor_l3": {
+        "name": "Leistungsfaktor L3"
+      },
+      "versicharge_power_factor_average": {
+        "name": "Leistungsfaktor Durchschnitt"
+      },
+      "versicharge_temperature_onboard_a": {
+        "name": "Interne Temperatur A"
+      },
+      "versicharge_temperature_onboard_b": {
+        "name": "Interne Temperatur B"
+      },
+      "versicharge_temperature_offboard_a": {
+        "name": "Kabeltemperatur A"
+      },
+      "versicharge_temperature_offboard_b": {
+        "name": "Kabeltemperatur B"
+      },
+      "versicharge_fallback_current": {
+        "name": "Fallback-Ladestrom"
+      },
+      "versicharge_fallback_time": {
+        "name": "Fallback-Zeit"
+      },
+      "versicharge_session_energy_target_raw": {
+        "name": "Sitzungs-Energieziel (Rohwert)"
+      },
+      "versicharge_production_date": {
+        "name": "Produktionsdatum"
+      },
+      "versicharge_platform_type": {
+        "name": "Plattformtyp",
+        "state": {
+          "residential": "Privat",
+          "commercial": "Gewerblich",
+          "erk": "ERK",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_number_of_outlets": {
+        "name": "Anzahl Ladepunkte"
+      },
+      "versicharge_outlet_type": {
+        "name": "Anschlusstyp",
+        "state": {
+          "left_type_2_socket": "Typ-2-Steckdose links",
+          "left_type_2_cable_7m": "Typ-2-Kabel links (7 m)",
+          "left_type_2_shuttered_france": "Typ-2-Steckdose mit Shutter links (Frankreich)",
+          "left_type_1_cable_7m": "Typ-1-Kabel links (7 m)",
+          "left_gbt_cable_6m": "GB/T-Kabel links (6 m)",
+          "front_j1772_20ft": "J1772-Kabel vorn (20 ft)",
+          "front_j1772_25ft": "J1772-Kabel vorn (25 ft)",
+          "right_type_2_socket": "Typ-2-Steckdose rechts",
+          "right_type_2_cable_7m": "Typ-2-Kabel rechts (7 m)",
+          "right_shuttered_e_plug": "Stecker Typ E mit Shutter rechts",
+          "right_type_1_cable_7m": "Typ-1-Kabel rechts (7 m)",
+          "right_shuttered_f_plug": "Stecker Typ F mit Shutter rechts",
+          "right_shuttered_cover": "Abdeckung mit Shutter rechts",
+          "reserved_13": "Reserviert (13)",
+          "dual_type_2_sockets": "Zwei Typ-2-Steckdosen",
+          "dual_type_2_cables_7m": "Zwei Typ-2-Kabel (7 m)",
+          "dual_type_2_france_7m": "Zwei Typ-2-Steckdosen mit Shutter (Frankreich)",
+          "dual_type_1_cables_7m": "Zwei Typ-1-Kabel (7 m)",
+          "dual_gbt_cables_7m": "Zwei GB/T-Kabel (7 m)",
+          "ccs1_j1772_25ft": "CCS1-/J1772-Kabel (25 ft)",
+          "reserved_20": "Reserviert (20)",
+          "reserved_21": "Reserviert (21)",
+          "blocked": "Gesperrt",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_delay_setting": {
+        "name": "Verzögerungseinstellung",
+        "state": {
+          "off": "Aus",
+          "2_hours": "2 Stunden",
+          "4_hours": "4 Stunden",
+          "6_hours": "6 Stunden",
+          "8_hours": "8 Stunden",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_connectivity": {
+        "name": "Konnektivität",
+        "state": {
+          "not_commissioned": "Nicht in Betrieb genommen",
+          "wifi": "WLAN",
+          "cellular": "Mobilfunk",
+          "ethernet": "Ethernet",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_rated_current": {
+        "name": "Nennstrom"
+      },
+      "versicharge_installation_current": {
+        "name": "Installationsstromgrenze"
+      },
+      "versicharge_meter_type": {
+        "name": "Zählertyp",
+        "state": {
+          "none": "Keiner",
+          "basic": "Basis",
+          "ansi": "ANSI",
+          "mid": "MID",
+          "integrated_mid": "Integrierter MID",
+          "erk": "ERK",
+          "cmc": "CMC",
+          "onboard_cmc": "Integrierter CMC",
+          "blocked": "Gesperrt",
+          "unknown": "Unbekannt"
+        }
+      },
+      "versicharge_a8_firmware": {
+        "name": "A8-Firmware"
+      },
+      "versicharge_m0_firmware": {
+        "name": "M0-Firmware"
+      },
+      "versicharge_modbus_app_version": {
+        "name": "Modbus-App-Version"
+      },
+      "versicharge_firmware_variant": {
+        "name": "Firmware-Variante"
+      },
+      "versicharge_firmware_release_date": {
+        "name": "Firmware-Veröffentlichungsdatum"
+      },
+      "versicharge_register_profile": {
+        "name": "Registerprofil",
+        "state": {
+          "legacy": "Legacy",
+          "modern": "Modern",
+          "modern_assumed": "Modern (angenommen)"
+        }
+      },
+      "versicharge_register_map": {
+        "name": "Registerkarte"
+      },
+      "versicharge_modbus_unit_id": {
+        "name": "Modbus Unit-ID"
+      }
+    },
+    "switch": {
+      "locate_device": {
+        "name": "Gerät identifizieren"
+      },
+      "output_force_1": {
+        "name": "Ausgang 1 erzwingen"
+      },
+      "output_force_2": {
+        "name": "Ausgang 2 erzwingen"
+      },
+      "rca_handle": {
+        "name": "Schaltergriff"
+      },
+      "rcm_ac_alarm_enable": {
+        "name": "RCM-AC-Alarm aktivieren"
+      },
+      "rcm_ac_pre_alarm_enable": {
+        "name": "RCM-AC-Voralarm aktivieren"
+      },
+      "rcm_rms_alarm_enable": {
+        "name": "RCM-RMS-Alarm aktivieren"
+      },
+      "rcm_rms_pre_alarm_enable": {
+        "name": "RCM-RMS-Voralarm aktivieren"
+      },
+      "switch_standby": {
+        "name": "Elektronische Ein-/Standby-Steuerung"
+      },
+      "unlock": {
+        "name": "Entsperren"
+      },
+      "versicharge_charging_enabled": {
+        "name": "Laden freigegeben"
+      }
+    },
+    "select": {
+      "ard_auto_reclose": {
+        "name": "Automatische Wiedereinschaltung (ARD)"
+      },
+      "attached_device_type": {
+        "name": "Angeschlossener Gerätetyp"
+      },
+      "ecpd_instantaneous_trip_behaviour": {
+        "name": "Verhalten bei Sofortauslösung"
+      },
+      "ecpd_nominal_current": {
+        "name": "Nennstrom"
+      },
+      "ecpd_rcd_sensitivity": {
+        "name": "RCD-Empfindlichkeit"
+      },
+      "ecpd_rcd_tripping_time": {
+        "name": "RCD-Auslösezeit"
+      },
+      "ecpd_residual_current_trip_behaviour": {
+        "name": "Verhalten bei Differenzstromauslösung"
+      },
+      "ecpd_time_delay_release_behaviour": {
+        "name": "Verhalten bei zeitverzögerter Auslösung"
+      },
+      "remote_control_communication": {
+        "name": "Fernsteuerungsquelle"
+      }
+    },
+    "button": {
+      "reset_manual_off": {
+        "name": "Manuelle Abschaltung zurücksetzen"
+      },
+      "start_rcm_test": {
+        "name": "RCM-Test starten"
+      },
+      "start_self_rcd_test": {
+        "name": "Self-RCD-Test starten"
+      },
+      "unpair_device": {
+        "name": "Gerät dauerhaft trennen"
+      }
+    },
+    "number": {
+      "rcm_ac_alarm_threshold": {
+        "name": "RCM-AC-Alarmschwelle"
+      },
+      "rcm_ac_pre_alarm_threshold": {
+        "name": "RCM-AC-Voralarmschwelle"
+      },
+      "rcm_rms_alarm_threshold": {
+        "name": "RCM-RMS-Alarmschwelle"
+      },
+      "rcm_rms_pre_alarm_threshold": {
+        "name": "RCM-RMS-Voralarmschwelle"
+      },
+      "versicharge_charging_current": {
+        "name": "Ladestrom-Sollwert"
+      },
+      "versicharge_charging_power": {
+        "name": "Ladeleistungs-Sollwert"
+      },
+      "versicharge_fallback_current": {
+        "name": "Fallback-Ladestrom"
+      },
+      "versicharge_fallback_time": {
+        "name": "Fallback-Zeit"
+      }
+    },
+    "binary_sensor": {
+      "versicharge_vehicle_connected": {
+        "name": "Fahrzeug verbunden"
+      },
+      "versicharge_charging": {
+        "name": "Ladevorgang aktiv"
+      },
+      "versicharge_problem": {
+        "name": "Störung"
+      }
+    }
+  }
+}
