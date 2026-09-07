@@ -15,8 +15,6 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
 </p>
 
-Current release: `V26.09.08`
-
 Requires Home Assistant `2026.8.0` or newer. The release workflow validates
 runtime imports against Home Assistant `2026.8.3`, Python `3.14.2` and
 `pymodbus 3.13.1`.
