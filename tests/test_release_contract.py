@@ -88,7 +88,7 @@ class RepositoryContractTests(unittest.TestCase):
         manifest = json.loads((INTEGRATION / "manifest.json").read_text())
         hacs = json.loads((ROOT / "hacs.json").read_text())
         self.assertEqual(manifest["domain"], "siemens_sentron")
-        self.assertEqual(manifest["version"], "V26.09.08")
+        self.assertEqual(manifest["version"], "V26.09.10")
         self.assertTrue(manifest["config_flow"])
         self.assertEqual(manifest["codeowners"], ["@powerassistant"])
         self.assertEqual(
@@ -96,6 +96,8 @@ class RepositoryContractTests(unittest.TestCase):
             "https://github.com/powerassistant/ha-siemens-sentron",
         )
         self.assertEqual(hacs["homeassistant"], "2026.8.0")
+        self.assertTrue(hacs["zip_release"])
+        self.assertEqual(hacs["filename"], "siemens_sentron.zip")
         self.assertEqual(manifest["requirements"], ["pymodbus==3.13.1"])
 
     def test_binary_sensor_platform_is_forwarded(self) -> None:

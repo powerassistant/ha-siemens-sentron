@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/powerassistant/ha-siemens-sentron/releases/latest"><img src="https://img.shields.io/github/v/release/powerassistant/ha-siemens-sentron" alt="Latest release"></a>
+  <a href="https://github.com/powerassistant/ha-siemens-sentron/releases"><img src="https://img.shields.io/github/downloads/powerassistant/ha-siemens-sentron/siemens_sentron.zip?displayAssetName=false" alt="Release ZIP downloads"></a>
   <a href="https://github.com/powerassistant/ha-siemens-sentron/actions/workflows/validate.yml"><img src="https://github.com/powerassistant/ha-siemens-sentron/actions/workflows/validate.yml/badge.svg" alt="Validation status"></a>
   <a href="https://www.hacs.xyz/docs/faq/custom_repositories/"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg" alt="HACS Custom"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
@@ -124,7 +125,7 @@ custom repository:
 2. Open the menu and select **Custom repositories**.
 3. Enter `https://github.com/powerassistant/ha-siemens-sentron`.
 4. Select **Integration** and add the repository.
-5. Select **Siemens SENTRON**, choose release `V26.09.08` and download it.
+5. Select **Siemens SENTRON**, choose the latest release and download it.
 6. Restart Home Assistant.
 
 ## Add the integration
@@ -247,6 +248,13 @@ for reproducible problems or the [device-support form](https://github.com/powera
 for an additional device or firmware variant.
 
 ## Documentation and support
+
+The download badge totals downloads of `siemens_sentron.zip` across published
+releases, starting with `V26.09.10`. It includes updates and repeated downloads;
+it does not measure unique users or active installations. Earlier source-based
+downloads are not included. Maintainers can follow the
+[release workflow instructions](docs/GITHUB_SETUP.md) to prepare the ZIP and
+view download counts for individual releases.
 
 - [Known limitations](docs/KNOWN_LIMITATIONS.md)
 - [VersiCharge monitoring and PV control](docs/VERSICHARGE.md)

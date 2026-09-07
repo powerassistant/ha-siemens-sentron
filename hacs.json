@@ -1,5 +1,7 @@
 {
+  "filename": "siemens_sentron.zip",
   "hide_default_branch": true,
   "homeassistant": "2026.8.0",
-  "name": "Siemens SENTRON"
+  "name": "Siemens SENTRON",
+  "zip_release": true
 }
