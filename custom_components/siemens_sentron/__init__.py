@@ -10,6 +10,7 @@ from homeassistant.helpers import device_registry as dr
 from .const import DOMAIN, GATEWAY_DEVICE_KEY, MANUFACTURER, get_device_configuration_url
 from .coordinator import SentronCoordinator
 from .entity_ids import CONFIG_ENTRY_MINOR_VERSION, ENTITY_ID_MIGRATION_PENDING
+from homeassistant.helpers import config_validation as cv
 
 PLATFORMS: list[Platform] = [
     Platform.SENSOR,
