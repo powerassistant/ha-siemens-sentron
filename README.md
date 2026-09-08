@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/powerassistant/ha-siemens-sentron/releases/latest"><img src="https://img.shields.io/github/v/release/powerassistant/ha-siemens-sentron" alt="Latest release"></a>
+  <a href="https://github.com/powerassistant/ha-siemens-sentron/releases"><img src="https://img.shields.io/github/downloads/powerassistant/ha-siemens-sentron/siemens_sentron.zip?displayAssetName=false" alt="Release ZIP downloads"></a>
   <a href="https://github.com/powerassistant/ha-siemens-sentron/actions/workflows/validate.yml"><img src="https://github.com/powerassistant/ha-siemens-sentron/actions/workflows/validate.yml/badge.svg" alt="Validation status"></a>
   <a href="https://www.hacs.xyz/docs/faq/custom_repositories/"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg" alt="HACS Custom"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
@@ -124,7 +125,7 @@ custom repository:
 2. Open the menu and select **Custom repositories**.
 3. Enter `https://github.com/powerassistant/ha-siemens-sentron`.
 4. Select **Integration** and add the repository.
-5. Select **Siemens SENTRON**, choose release `V26.09.08` and download it.
+5. Select **Siemens SENTRON**, choose the latest release and download it.
 6. Restart Home Assistant.
 
 ## Add the integration
@@ -246,7 +247,28 @@ sharing logs. Use the [bug report form](https://github.com/powerassistant/ha-sie
 for reproducible problems or the [device-support form](https://github.com/powerassistant/ha-siemens-sentron/issues/new?template=device_support.yml)
 for an additional device or firmware variant.
 
+### Missing icon in the HACS list
+
+The integration includes `brand/icon.png` and `brand/logo.png`, which Home
+Assistant supports locally from version 2026.3. Both files are included in the
+release ZIP. HACS 2.0.5 still loads its list icons from the older central brand
+service. Integrations with existing entries there can display an icon while
+newer integrations with local images show a placeholder.
+
+Support for these local images in the HACS list is tracked in
+[HACS #5388](https://github.com/hacs/integration/pull/5388). Updating this
+integration alone cannot change that HACS behavior. See the
+[Home Assistant brand image documentation](https://developers.home-assistant.io/blog/2026/02/24/brands-proxy-api/)
+for how the bundled images are used in Home Assistant itself after installation.
+
 ## Documentation and support
+
+The download badge totals downloads of `siemens_sentron.zip` across published
+releases, starting with `V26.09.10`. It includes updates and repeated downloads;
+it does not measure unique users or active installations. Earlier source-based
+downloads are not included. Maintainers can follow the
+[release workflow instructions](docs/GITHUB_SETUP.md) to prepare the ZIP and
+view download counts for individual releases.
 
 - [Known limitations](docs/KNOWN_LIMITATIONS.md)
 - [VersiCharge monitoring and PV control](docs/VERSICHARGE.md)

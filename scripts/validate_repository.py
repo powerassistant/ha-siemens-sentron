@@ -14,7 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = "siemens_sentron"
 INTEGRATION = ROOT / "custom_components" / DOMAIN
-EXPECTED_VERSION = "V26.09.08"
+EXPECTED_VERSION = "V26.09.10"
 PLACEHOLDER = "REPLACE_WITH_GITHUB_OWNER"
 
 
@@ -59,6 +59,8 @@ def validate(*, allow_release_gates: bool) -> list[str]:
         ROOT / "DISCLAIMER.md",
         ROOT / "DISCLAIMER_DE.md",
         ROOT / ".github" / "workflows" / "validate.yml",
+        ROOT / ".github" / "workflows" / "release.yml",
+        ROOT / "scripts" / "build_release.py",
         ROOT / "docs" / "KNOWN_LIMITATIONS.md",
         ROOT / "docs" / "images" / "README.md",
     ]
@@ -121,8 +123,10 @@ def validate(*, allow_release_gates: bool) -> list[str]:
     }
     if undocumented_hacs_keys:
         errors.append(f"hacs.json: unsupported keys {sorted(undocumented_hacs_keys)}")
-    if hacs.get("zip_release"):
-        errors.append("hacs.json: zip_release is intentionally not used for the standard layout")
+    if hacs.get("zip_release") is not True:
+        errors.append("hacs.json: zip_release must be enabled for counted release downloads")
+    if hacs.get("filename") != "siemens_sentron.zip":
+        errors.append("hacs.json: filename must match the siemens_sentron.zip release asset")
 
     strings = load_json(INTEGRATION / "strings.json", errors)
     english = load_json(INTEGRATION / "translations" / "en.json", errors)

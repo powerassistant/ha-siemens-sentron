@@ -2,6 +2,25 @@
 
 All notable changes to this project are documented here.
 
+## [V26.09.10] - Unreleased
+
+### Changed
+
+- Package HACS downloads as the `siemens_sentron.zip` GitHub release asset.
+- Show cumulative release ZIP downloads in the README. The counter includes
+  updates and repeated downloads, starting with this release.
+- Prepare release drafts with a validated ZIP through GitHub Actions before
+  publication, and check that the tag matches the integration version.
+- Remove the fixed release selection from the HACS installation instructions.
+- Verify that the release ZIP includes both brand images and document the
+  remaining HACS list-icon limitation.
+
+## [V26.09.09] - 2026-09-07
+
+### Changed
+
+- Remove internal project checklists from the public repository.
+
 ## [V26.09.08] - 2026-09-07
 
 ### Fixed

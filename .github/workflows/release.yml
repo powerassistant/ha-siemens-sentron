@@ -1,0 +1,65 @@
+name: Prepare release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "New release tag matching manifest.json (for example V26.09.10)"
+        required: true
+        type: string
+      notes:
+        description: "Release notes for the draft"
+        required: false
+        default: "See the changelog for release details."
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: prepare-release
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/validate.yml
+
+  package:
+    name: Build ZIP and prepare draft
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the validated commit
+        uses: actions/checkout@v7
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14.2"
+      - name: Build the HACS release ZIP
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: >-
+          python3 scripts/build_release.py
+          --tag "$RELEASE_TAG"
+          --output "$RUNNER_TEMP/siemens_sentron.zip"
+      - name: Create a new tag and draft release with the ZIP attached
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ inputs.tag }}
+          RELEASE_NOTES: ${{ inputs.notes }}
+        run: |
+          printf '%s\n' "$RELEASE_NOTES" > "$RUNNER_TEMP/release-notes.md"
+          # Creating a ref fails if the tag already exists; never move a released tag.
+          gh api "repos/$GH_REPO/git/refs" \
+            -f ref="refs/tags/$RELEASE_TAG" \
+            -f sha="$GITHUB_SHA" --silent
+          gh release create "$RELEASE_TAG" "$RUNNER_TEMP/siemens_sentron.zip" \
+            --verify-tag --draft \
+            --title "Siemens SENTRON $RELEASE_TAG" \
+            --notes-file "$RUNNER_TEMP/release-notes.md"
+          printf 'Draft release prepared with siemens_sentron.zip. Review it under [Releases](https://github.com/%s/releases) and select **Publish release** when ready.\n' "$GH_REPO" >> "$GITHUB_STEP_SUMMARY"
