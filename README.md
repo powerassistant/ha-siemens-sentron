@@ -291,8 +291,6 @@ complete exclusion of liability in every jurisdiction. See the
 [third-party notice](NOTICE.md).
 
 This is a custom community integration and is not part of Home Assistant Core.
-Siemens, SENTRON and Powercenter are trademarks of Siemens AG. The bundled
-Siemens brand asset is used in agreement with Siemens as confirmed by the
-maintainer. Product names identify compatibility and do not by themselves imply
+Siemens, SENTRON and Powercenter are trademarks of Siemens AG. Product names identify compatibility and do not by themselves imply
 official support or endorsement. Home Assistant is a project of the Open Home
 Foundation.
