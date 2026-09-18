@@ -40,8 +40,7 @@ geprüft werden.
 ## Unabhängigkeit, Marken und Unterlagen
 
 Dieses Community-Projekt ist kein offizielles Siemens-Produkt und kein
-Bestandteil von Home Assistant Core. Nach Angabe des Maintainers erfolgt die
-Verwendung des beigefügten Siemens-Markenmotivs im Einvernehmen mit Siemens.
+Bestandteil von Home Assistant Core.
 Siemens, SENTRON, Powercenter und weitere Produktnamen oder Marken werden
 beschreibend verwendet; alle Rechte daran verbleiben bei den jeweiligen
 Rechteinhabern. Die Nennung allein bedeutet keine Unterstützung oder Freigabe
