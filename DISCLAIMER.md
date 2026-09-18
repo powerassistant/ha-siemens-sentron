@@ -40,9 +40,7 @@ non-critical installation by appropriately qualified personnel.
 ## Independence and trademarks
 
 This independent community project is not an official Siemens product and is
-not supported by the Open Home Foundation or the Home Assistant project.
-According to the maintainer, the bundled Siemens brand asset is used in
-agreement with Siemens. Siemens, SENTRON, Powercenter and other referenced
+not supported by the Open Home Foundation or the Home Assistant project. Siemens, SENTRON, Powercenter and other referenced
 product names or marks are used descriptively and remain the property of their
 respective owners. Their mention does not by itself imply sponsorship or
 endorsement.
