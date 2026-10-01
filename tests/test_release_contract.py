@@ -98,7 +98,7 @@ class RepositoryContractTests(unittest.TestCase):
         self.assertEqual(hacs["homeassistant"], "2026.8.0")
         self.assertTrue(hacs["zip_release"])
         self.assertEqual(hacs["filename"], "siemens_sentron.zip")
-        self.assertEqual(manifest["requirements"], ["pymodbus==3.13.1"])
+        self.assertEqual(manifest["requirements"], ["pymodbus>=3.13.1"])
 
     def test_binary_sensor_platform_is_forwarded(self) -> None:
         setup_source = (INTEGRATION / "__init__.py").read_text()
