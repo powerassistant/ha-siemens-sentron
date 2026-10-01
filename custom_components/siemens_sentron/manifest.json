@@ -8,6 +8,6 @@
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/powerassistant/ha-siemens-sentron/issues",
   "loggers": ["pymodbus"],
-  "requirements": ["pymodbus==3.13.1"],
+  "requirements": ["pymodbus>=3.13.1"],
   "version": "V26.09.10"
 }
