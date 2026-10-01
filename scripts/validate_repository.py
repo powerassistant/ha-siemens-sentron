@@ -104,8 +104,8 @@ def validate(*, allow_release_gates: bool) -> list[str]:
     if manifest.get("integration_type") != "hub":
         errors.append("manifest.json: integration_type must be 'hub'")
     requirements = manifest.get("requirements", [])
-    if requirements != ["pymodbus==3.13.1"]:
-        errors.append("manifest.json: expected the Home Assistant-compatible pymodbus==3.13.1 pin")
+    if requirements != ["pymodbus>=3.13.1"]:
+        errors.append("manifest.json: expected the Home Assistant-compatible pymodbus>=3.13.1 pin")
 
     hacs = load_json(ROOT / "hacs.json", errors)
     if hacs.get("name") != "Siemens SENTRON":
