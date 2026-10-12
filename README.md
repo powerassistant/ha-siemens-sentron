@@ -34,7 +34,7 @@ The **PAC2200 universal counter**, exposed as **Counter Configurable**, extends 
 
 ![Live power sources and a hierarchical view of where power is being used](https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/docs/screenshots/power-flow.png)
 
-*From the whole-home view to monitored floors, circuits and individual loads. The illustrated hierarchy is a user-configured Home Assistant view.*
+*From the whole-home view to monitored floors, circuits and individual loads.*
 
 [Set up electricity, gas and water reporting →](docs/ENERGY_DASHBOARD.md)
 
