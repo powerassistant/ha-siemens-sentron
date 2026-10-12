@@ -88,7 +88,7 @@ class RepositoryContractTests(unittest.TestCase):
         manifest = json.loads((INTEGRATION / "manifest.json").read_text())
         hacs = json.loads((ROOT / "hacs.json").read_text())
         self.assertEqual(manifest["domain"], "siemens_sentron")
-        self.assertEqual(manifest["version"], "V26.09.10")
+        self.assertEqual(manifest["version"], "V26.10.12")
         self.assertTrue(manifest["config_flow"])
         self.assertEqual(manifest["codeowners"], ["@powerassistant"])
         self.assertEqual(

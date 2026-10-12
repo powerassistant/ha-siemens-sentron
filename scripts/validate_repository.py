@@ -14,7 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 DOMAIN = "siemens_sentron"
 INTEGRATION = ROOT / "custom_components" / DOMAIN
-EXPECTED_VERSION = "V26.09.10"
+EXPECTED_VERSION = "V26.10.12"
 PLACEHOLDER = "REPLACE_WITH_GITHUB_OWNER"
 
 

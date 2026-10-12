@@ -2,7 +2,31 @@
 
 All notable changes to this project are documented here.
 
-## [V26.09.10] - Unreleased
+## [V26.10.12] - Unreleased
+
+### Changed
+
+- Prepare the compact, device-first README, SENTRON panel illustration and nine
+  English documentation screenshots for a release that HACS can display.
+- Include focused energy/pulse-counter and appliance-automation guides, a
+  screenshot gallery and the preserved technical reference.
+- Include the previously committed `pymodbus>=3.13.1` requirement from `main`
+  (the preceding release used `pymodbus==3.13.1`). The CI target remains 3.13.1.
+- Include the existing documentation and trademark-notice refinements from
+  `main`; the MIT license and operational safety restrictions remain in force.
+
+### Upgrade note
+
+- No changes to integration Python code, device profiles, Modbus addresses,
+  entity IDs or control defaults compared with V26.09.10. The package manifest
+  changes its version and the dependency requirement described above.
+- After publication, back up Home Assistant, update through HACS and restart
+  Home Assistant. No removal or reconfiguration of the integration is required.
+- Use the existing Prepare release workflow with tag `V26.10.12`, then review
+  and publish the draft with `siemens_sentron.zip` attached. Release workflows,
+  existing tags and previously published assets are unchanged by this preparation.
+
+## [V26.09.10] - 2026-09-08
 
 ### Changed
 
@@ -51,7 +75,7 @@ All notable changes to this project are documented here.
 - Reduced normal VersiCharge traffic to a read-only `10 s` poll with a `5 s`
   request timeout; static identity is no longer reread every five minutes.
 - Active power-target and resume writes now have a five-second start-to-start
-  limit. Pause and fallback may bypass that interval but still fail fast while
+  limit. Pause and fallback may bypass the interval but still fail fast while
   another command is active. Every write has a twelve-second outer deadline,
   with no retry or automatic corrective write.
 
