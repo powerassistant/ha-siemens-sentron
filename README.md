@@ -20,7 +20,7 @@ See where your energy goes, know when your laundry is finished, and keep an eye 
 
 ![Home Assistant Energy dashboard with electricity, solar, battery, gas, water and cost views](https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/docs/screenshots/energy-overview.png)
 
-*Example installation: SENTRON measurements combined with separately configured Home Assistant integrations, helpers and tariffs. Dashboards and automations are configured by the user, not installed automatically by this integration.*
+*Example installation: SENTRON measurements combined within separately configured Home Assistant Energy Dashboard. Dashboard and automations are configured by the user, not installed automatically by this integration.*
 
 ## 1. Understand your consumption — electricity, gas and water
 
