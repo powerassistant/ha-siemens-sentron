@@ -181,6 +181,16 @@ def validate(*, allow_release_gates: bool) -> list[str]:
     allowed_pngs = {
         INTEGRATION / "brand" / "icon.png",
         INTEGRATION / "brand" / "logo.png",
+        # Maintainer-approved documentation screenshots; keep this list explicit.
+        ROOT / "docs" / "screenshots" / "circuit-monitoring.png",
+        ROOT / "docs" / "screenshots" / "device-configuration.png",
+        ROOT / "docs" / "screenshots" / "device-diagnostics.png",
+        ROOT / "docs" / "screenshots" / "device-discovery.png",
+        ROOT / "docs" / "screenshots" / "energy-overview.png",
+        ROOT / "docs" / "screenshots" / "laundry-automation.png",
+        ROOT / "docs" / "screenshots" / "pac2200-diagnostics.png",
+        ROOT / "docs" / "screenshots" / "pac2200-measurements.png",
+        ROOT / "docs" / "screenshots" / "power-flow.png",
     }
     for path in ROOT.rglob("*"):
         if path.is_file() and path.suffix.lower() in forbidden_extensions:
