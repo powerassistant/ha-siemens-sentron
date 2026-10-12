@@ -62,7 +62,7 @@ Capabilities depend on the device profile and firmware; not every hardware/firmw
 
 ![Example laundry-completion trigger and helper actions](https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/docs/screenshots/laundry-automation.png)
 
-The automation capture shows the completion step, not the full start/notification workflow. Its below-3-W-for-one-minute setting is appliance-specific. Screenshot labels were edited into English and may differ from your installation.
+The automation capture shows the completion step, not the full start/notification workflow. Its below-3-W-for-one-minute setting is appliance-specific.
 
 [All screenshots →](docs/SCREENSHOTS.md)
 
