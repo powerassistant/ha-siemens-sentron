@@ -178,7 +178,9 @@ def validate(*, allow_release_gates: bool) -> list[str]:
         ".xlsx",
         ".zip",
     }
-    allowed_pngs = {
+    allowed_images = {
+        # Maintainer-supplied SENTRON panel illustration, optimized for the README.
+        ROOT / "docs" / "images" / "sentron-panel.webp",
         INTEGRATION / "brand" / "icon.png",
         INTEGRATION / "brand" / "logo.png",
         # Maintainer-approved documentation screenshots; keep this list explicit.
@@ -195,7 +197,7 @@ def validate(*, allow_release_gates: bool) -> list[str]:
     for path in ROOT.rglob("*"):
         if path.is_file() and path.suffix.lower() in forbidden_extensions:
             errors.append(f"confidential/source-document file type is not allowed: {path.relative_to(ROOT)}")
-        if path.is_file() and path.suffix.lower() == ".png" and path not in allowed_pngs:
+        if path.is_file() and path.suffix.lower() in {".png", ".webp"} and path not in allowed_images:
             errors.append(f"unapproved image is not allowed: {path.relative_to(ROOT)}")
         if path.is_file() and path.stat().st_size == 0:
             errors.append(f"unexpected empty file: {path.relative_to(ROOT)}")
