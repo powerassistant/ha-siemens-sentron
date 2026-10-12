@@ -50,7 +50,7 @@ Send a phone notification, announce the result on a speaker, or update a dashboa
 
 ![Home Assistant automation editor showing power below 3 W for one minute and washing-machine helper actions](https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/docs/screenshots/laundry-automation.png)
 
-*The screenshot illustrates the completion step: below 3 W for one minute, followed by helper changes. A complete workflow also checks that the appliance was running and adds the desired notification action. Thresholds and hold times must be tuned to the appliance; a programme pause is not necessarily the end of a cycle.*
+*The screenshot illustrates the completion step: below 3 W for one minute, followed by helper changes.*
 
 [Build the start, finish and notification workflow →](docs/AUTOMATIONS.md)
 
