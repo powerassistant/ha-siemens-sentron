@@ -4,7 +4,7 @@
 
 ![Communicative SENTRON devices in an electrical distribution panel](https://raw.githubusercontent.com/powerassistant/ha-siemens-sentron/main/docs/images/sentron-panel.webp)
 
-Bring **SENTRON Powercenter 1000 / 1100 / 2000**, their supported communicative devices and standalone **PAC2200** meters into Home Assistant. Access measurements, device states, diagnostics and supported controls over **local Modbus TCP** — with IP-based setup, automatic device identification and no manual register mapping or cloud account.
+Bring **SENTRON Powercenter 1000 / 1100 / 2000**, their supported communicative devices and standalone **PAC2200** meters into Home Assistant. Access measurements, device states, diagnostics and supported controls over **local Modbus TCP** — with IP-based setup and automatic device identification.
 
 [![Latest release](https://img.shields.io/github/v/release/powerassistant/ha-siemens-sentron)](https://github.com/powerassistant/ha-siemens-sentron/releases/latest)
 [![Release ZIP downloads](https://img.shields.io/github/downloads/powerassistant/ha-siemens-sentron/siemens_sentron.zip?displayAssetName=false)](https://github.com/powerassistant/ha-siemens-sentron/releases)
