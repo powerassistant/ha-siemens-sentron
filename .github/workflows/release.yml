@@ -29,7 +29,8 @@ jobs:
   package:
     name: Build ZIP and prepare draft
     needs: validate
-    runs-on: ubuntu-latest
+    # Match the runner used to validate the pinned Python runtime.
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
